@@ -1,0 +1,14 @@
+.blind {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+body {
+  word-break: keep-all;
+  overflow-x: hidden;
+  transition: background-color 0.5s;
+}

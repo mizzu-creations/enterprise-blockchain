@@ -1,0 +1,22 @@
+// font size, font weight, line height
+@mixin font-size($size) {
+  $line-heights: (
+    100: 1,
+    72: 1.28,
+    60: 1,
+    52: 1.35,
+    50: normal,
+    40: 1.25,
+    28: 1.43,
+    24: 1.67,
+    16: 1.63,
+    14: 1.63,
+  );
+  @if map-has-key($line-heights, $size) {
+    font-size: #{$size}px;
+    font-weight: bold;
+    line-height: map-get($line-heights, $size);
+  } @else {
+    @error "#{$size}px은 지정되지 않은 폰트 사이즈 입니다. 수정 해주세요.";
+  }
+}
