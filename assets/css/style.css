@@ -335,4 +335,46 @@ body {
   font-weight: 600;
   line-height: 1.67;
   font-family: "Noto Sans KR", sans-serif;
+}
+
+.sc-worth {
+  position: relative;
+  padding: 218px 0 226px;
+  background: url(../images/worth_aqua.jpg) no-repeat 50%;
+  background-size: cover;
+}
+.sc-worth .worth-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.sc-worth .worth-title span {
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+  color: #fff;
+}
+.sc-worth::before, .sc-worth::after {
+  content: "";
+  max-width: 21.875%;
+  width: 336px;
+  height: 140px;
+  position: absolute;
+  background-color: #fff;
+}
+.sc-worth::before {
+  top: 0;
+  right: 0;
+}
+.sc-worth::after {
+  bottom: 0;
+  left: 0;
 }/*# sourceMappingURL=style.css.map */
