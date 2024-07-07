@@ -223,6 +223,7 @@ body {
   width: 100%;
 }
 .sc-intro .intro-contents {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -241,4 +242,57 @@ body {
   line-height: 1.35;
   font-weight: 700;
   color: #fff;
+}
+
+.sc-showcase {
+  height: 100vh;
+}
+.sc-showcase .bg {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.sc-showcase .bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.sc-showcase .bg img:last-child {
+  top: -800px;
+}
+.sc-showcase .showcase-contents {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+.sc-showcase .showcase-contents > [class*=-desc] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 600;
+}
+.sc-showcase .showcase-contents .desc01 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 100px;
+  line-height: 1.2;
+}
+.sc-showcase .showcase-contents .desc02 {
+  font-size: 24px;
+  line-height: 1.67;
 }/*# sourceMappingURL=style.css.map */

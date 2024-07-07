@@ -1,7 +1,7 @@
 // font size, font weight, line height
 @mixin font-size($size) {
   $line-heights: (
-    100: 1,
+    100: 1.2,
     72: 1.28,
     60: 1,
     52: 1.35,
