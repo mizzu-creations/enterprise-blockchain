@@ -765,4 +765,111 @@ body {
   font-weight: 600;
   line-height: 1.25;
   color: #fff;
+}
+
+.sc-safety {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 160px;
+  padding: 0 100px;
+  color: #fff;
+}
+.sc-safety .safety-title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+}
+.sc-safety .group-data-cards .card-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+.sc-safety .group-data-cards .card-list .card-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  height: 540px;
+  padding: 34px;
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+.sc-safety .group-data-cards .card-list .card-item .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: normal;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  line-height: 1;
+}
+.sc-safety .group-data-cards .card-list .card-item .card-header::after {
+  content: "****";
+  font-size: 30px;
+}
+.sc-safety .group-data-cards .card-list .card-item img {
+  width: 100%;
+  padding: 56px 50px 0 0;
+}
+.sc-safety .group-data-cards .card-list .card-item .card-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sc-safety .group-data-cards .card-list .card-item .card-info span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+}
+.sc-safety .group-data-cards .card-list .card-item .card-info .ic-info {
+  width: 40px;
+  height: 40px;
+  background: url(../../assets/images/card/contract-icon.png) no-repeat 50%/cover;
+}
+.sc-safety .group-data-cards .card-list .card-lock {
+  position: relative;
+  border: 2px solid transparent;
+  padding: 0;
+  background-image: linear-gradient(#000, #000), linear-gradient(315deg, #e657af, #0049ff, #43cf2e);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.sc-safety .group-data-cards .card-list .card-lock img {
+  width: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.sc-safety .group-data-cards .card-list .card-lock img.lock {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
