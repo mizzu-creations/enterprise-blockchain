@@ -1,0 +1,116 @@
+.sc-possible {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  .possible-inner {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+    padding-left: 100px;
+    color: #fff;
+    overflow-x: scroll;
+    .possible-title {
+      flex-shrink: 0;
+      @include font-size(72);
+    }
+    .group-process {
+      flex-shrink: 0;
+      .process-list {
+        display: flex;
+        gap: 75px;
+        .process-item {
+          .frame {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            border: 2px solid #fff;
+            border-radius: 58px;
+            aspect-ratio: 1/1;
+            img {
+              max-width: 54%;
+            }
+          }
+          p {
+            margin-top: 24px;
+            padding-left: 20px;
+            @include font-size(24);
+            font-weight: 700;
+          }
+          &:not(:last-child) .frame::after {
+            content: "";
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            top: 50%;
+            right: -44px;
+            transform: translateY(-50%) rotate(45deg);
+            border: 8px solid #fff;
+            border-left: 0;
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+    .graphic-area {
+      flex-shrink: 0;
+      width: calc(100vw - 100px);
+      padding: 0 200px 0 100px;
+      .graphic-wrap {
+        position: relative;
+        width: 506px;
+        margin: 0 auto;
+        img {
+          width: 100%;
+          max-width: 100%;
+        }
+        .text-box {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          .graphic-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 33.5%;
+            position: absolute;
+            em {
+              @include font-size(24);
+              line-height: 1.42;
+            }
+            span {
+              @include font-size(16);
+              font-weight: 700;
+            }
+            &.record {
+              left: 0;
+              bottom: 26.3%;
+            }
+            &.prove {
+              width: 100%;
+              top: 9%;
+            }
+            &.growth {
+              right: 0;
+              bottom: 26.3%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .possible-desc {
+    padding: 0 100px;
+    position: absolute;
+    left: 0;
+    bottom: 4.1667vh;
+    color: #989898;
+    @include font-size(14);
+    font-weight: 400;
+    line-height: 1.63;
+  }
+}
