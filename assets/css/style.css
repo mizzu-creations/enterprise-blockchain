@@ -251,6 +251,48 @@ body {
   font-weight: 600;
   line-height: 1.67;
 }
+#contents .sc-worth {
+  position: relative;
+  padding: 218px 0 226px;
+  background: url(../images/worth_aqua.jpg) no-repeat 50%;
+  background-size: cover;
+}
+#contents .sc-worth [class*=-title] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+#contents .sc-worth [class*=-title] span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+  color: #fff;
+}
+#contents .sc-worth::before, #contents .sc-worth::after {
+  content: "";
+  max-width: 21.875%;
+  width: 336px;
+  height: 140px;
+  position: absolute;
+  background-color: #fff;
+}
+#contents .sc-worth::before {
+  top: 0;
+  right: 0;
+}
+#contents .sc-worth::after {
+  bottom: 0;
+  left: 0;
+}
 #contents .sc-certification {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -321,6 +363,49 @@ body {
   font-weight: 600;
   line-height: 1.67;
 }
+#contents .sc-global {
+  position: relative;
+  padding: 218px 0 226px;
+  background: url(../images/prove.jpg) no-repeat 50%;
+  background-size: cover;
+}
+#contents .sc-global [class*=-title] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+#contents .sc-global [class*=-title] span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+  color: #fff;
+}
+#contents .sc-global::before, #contents .sc-global::after {
+  content: "";
+  max-width: 21.875%;
+  width: 336px;
+  height: 140px;
+  position: absolute;
+  background-color: #fff;
+}
+#contents .sc-global::before {
+  top: 0;
+  right: 0;
+}
+#contents .sc-global::after {
+  bottom: 0;
+  left: 0;
+}
+
 .sc-intro {
   position: relative;
 }
@@ -409,49 +494,6 @@ body {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.67;
-}
-
-.sc-worth {
-  position: relative;
-  padding: 218px 0 226px;
-  background: url(../images/worth_aqua.jpg) no-repeat 50%;
-  background-size: cover;
-}
-.sc-worth .worth-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-}
-.sc-worth .worth-title span {
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 72px;
-  font-weight: 600;
-  line-height: 1.28;
-  color: #fff;
-}
-.sc-worth::before, .sc-worth::after {
-  content: "";
-  max-width: 21.875%;
-  width: 336px;
-  height: 140px;
-  position: absolute;
-  background-color: #fff;
-}
-.sc-worth::before {
-  top: 0;
-  right: 0;
-}
-.sc-worth::after {
-  bottom: 0;
-  left: 0;
 }
 
 .sc-talent .talent-inner {

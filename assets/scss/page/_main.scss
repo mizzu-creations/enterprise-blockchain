@@ -2,6 +2,9 @@
   .sc-career {
     @include desc-only-page(#000);
   }
+  .sc-worth {
+    @include text-divide-page("worth_aqua.jpg");
+  }
   .sc-certification {
     @include desc-only-page(#fff);
   }
@@ -9,11 +12,12 @@
     @include desc-only-page(#000);
   }
   .sc-global {
+    @include text-divide-page("prove.jpg");
   }
-  .sc-future {
-  }
-  .sc-creator {
-  }
-  .sc-participation {
-  }
+  // .sc-future {
+  // }
+  // .sc-creator {
+  // }
+  // .sc-participation {
+  // }
 }
