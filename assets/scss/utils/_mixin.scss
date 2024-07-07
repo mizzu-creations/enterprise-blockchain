@@ -22,3 +22,28 @@
     @error "#{$size}px은 지정되지 않은 폰트 사이즈 입니다. 수정 해주세요.";
   }
 }
+
+// section / career, certification
+@mixin desc-only-page($text-color) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  [class*="-inner"] {
+    width: 100%;
+    padding: 80px 100px;
+    color: $text-color;
+    [class*="-title"] {
+      max-width: 50%;
+      @include font-size(72);
+    }
+    .desc-area {
+      max-width: 50%;
+      margin-left: auto;
+      padding-left: 100px;
+      [class*="-desc"] {
+        @include font-size(24);
+      }
+    }
+  }
+}

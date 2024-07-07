@@ -1,25 +1,12 @@
 #contents {
-  .sc-intro {
-  }
-  .sc-showcase {
-  }
   .sc-career {
-  }
-  .sc-worth {
-  }
-  .sc-talent {
-  }
-  .sc-possible {
+    @include desc-only-page(#000);
   }
   .sc-certification {
-  }
-  .sc-gradation {
-  }
-  .sc-safety {
-  }
-  .sc-service {
+    @include desc-only-page(#fff);
   }
   .sc-trend {
+    @include desc-only-page(#000);
   }
   .sc-global {
   }

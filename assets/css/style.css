@@ -216,6 +216,111 @@ body {
   font-weight: 300;
 }
 
+#contents .sc-career {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+#contents .sc-career [class*=-inner] {
+  width: 100%;
+  padding: 80px 100px;
+  color: #000;
+}
+#contents .sc-career [class*=-inner] [class*=-title] {
+  max-width: 50%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+}
+#contents .sc-career [class*=-inner] .desc-area {
+  max-width: 50%;
+  margin-left: auto;
+  padding-left: 100px;
+}
+#contents .sc-career [class*=-inner] .desc-area [class*=-desc] {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
+}
+#contents .sc-certification {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+#contents .sc-certification [class*=-inner] {
+  width: 100%;
+  padding: 80px 100px;
+  color: #fff;
+}
+#contents .sc-certification [class*=-inner] [class*=-title] {
+  max-width: 50%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+}
+#contents .sc-certification [class*=-inner] .desc-area {
+  max-width: 50%;
+  margin-left: auto;
+  padding-left: 100px;
+}
+#contents .sc-certification [class*=-inner] .desc-area [class*=-desc] {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
+}
+#contents .sc-trend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+#contents .sc-trend [class*=-inner] {
+  width: 100%;
+  padding: 80px 100px;
+  color: #000;
+}
+#contents .sc-trend [class*=-inner] [class*=-title] {
+  max-width: 50%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+}
+#contents .sc-trend [class*=-inner] .desc-area {
+  max-width: 50%;
+  margin-left: auto;
+  padding-left: 100px;
+}
+#contents .sc-trend [class*=-inner] .desc-area [class*=-desc] {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
+}
 .sc-intro {
   position: relative;
 }
@@ -300,41 +405,6 @@ body {
   line-height: 1.2;
 }
 .sc-showcase .showcase-contents .desc02 {
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.67;
-}
-
-.sc-career {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 100vh;
-}
-.sc-career .career-inner {
-  width: 100%;
-  padding: 80px 100px;
-}
-.sc-career .career-inner .career-title {
-  max-width: 50%;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 72px;
-  font-weight: 600;
-  line-height: 1.28;
-}
-.sc-career .career-inner .desc-area {
-  max-width: 50%;
-  margin-left: auto;
-  padding-left: 100px;
-}
-.sc-career .career-inner .desc-area .career-desc {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 24px;
   font-weight: 600;
