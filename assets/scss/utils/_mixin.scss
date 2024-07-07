@@ -15,6 +15,7 @@
   );
   @if map-has-key($line-heights, $size) {
     font-size: #{$size}px;
+    font-weight: 600;
     line-height: map-get($line-heights, $size);
   } @else {
     @error "#{$size}px은 지정되지 않은 폰트 사이즈 입니다. 수정 해주세요.";

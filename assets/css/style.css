@@ -164,6 +164,7 @@ body {
   padding: 23px 25px;
   color: #fff;
   font-size: 18px;
+  font-weight: 600;
   line-height: 1;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 600;
@@ -204,6 +205,7 @@ body {
 #footer .footer-inner .info-area {
   color: #fff;
   font-size: 14px;
+  font-weight: 600;
   line-height: 1;
   font-weight: 400;
 }
@@ -239,6 +241,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-size: 52px;
+  font-weight: 600;
   line-height: 1.35;
   font-weight: 700;
   color: #fff;
@@ -290,9 +293,46 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-size: 100px;
+  font-weight: 600;
   line-height: 1.2;
 }
 .sc-showcase .showcase-contents .desc02 {
   font-size: 24px;
+  font-weight: 600;
   line-height: 1.67;
+}
+
+.sc-career {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+.sc-career .career-inner {
+  width: 100%;
+  padding: 80px 100px;
+}
+.sc-career .career-inner .career-title {
+  max-width: 50%;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.sc-career .career-inner .desc-area {
+  max-width: 50%;
+  margin-left: auto;
+  padding-left: 100px;
+}
+.sc-career .career-inner .desc-area .career-desc {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
+  font-family: "Noto Sans KR", sans-serif;
 }/*# sourceMappingURL=style.css.map */
