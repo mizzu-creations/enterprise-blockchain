@@ -54,12 +54,7 @@
       }
       .card-lock {
         position: relative;
-        border: 2px solid transparent;
         padding: 0;
-        background-image: linear-gradient(#000, #000),
-          linear-gradient(315deg, #e657af, #0049ff, #43cf2e);
-        background-origin: border-box;
-        background-clip: content-box, border-box;
         img {
           width: 150px;
           position: absolute;
