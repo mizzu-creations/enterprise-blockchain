@@ -60,4 +60,75 @@ body {
   overflow-x: hidden;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #f00;
+}
+#header .header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 100px;
+}
+#header .header-inner .logo {
+  padding: 17px 0;
+}
+#header .header-inner .logo img {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
+}
+#header .header-inner #gnb .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#header .header-inner #gnb .nav-list .nav-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 23px 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+#header[data-dark=true] .header-inner .logo img {
+  -webkit-filter: none;
+          filter: none;
+}
+#header[data-dark=true] #gnb .nav-list .nav-item a {
+  color: #000;
+}
+#header[data-dark=true] .ic-lang path {
+  stroke: #000;
+}
+#header[data-dark=true] .ic-more path {
+  stroke: #000;
 }/*# sourceMappingURL=style.css.map */
