@@ -1,0 +1,20 @@
+#footer {
+  background-color: #000;
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 58px 100px;
+    .info-area {
+      color: #fff;
+      @include font-size(14);
+      font-weight: 400;
+      .copy {
+        display: block;
+        margin-top: 10px;
+        font-weight: 300;
+      }
+    }
+  }
+}

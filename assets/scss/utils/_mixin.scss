@@ -11,11 +11,10 @@
     24: 1.67,
     18: 1,
     16: 1.63,
-    14: 1.63,
+    14: 1,
   );
   @if map-has-key($line-heights, $size) {
     font-size: #{$size}px;
-    font-weight: bold;
     line-height: map-get($line-heights, $size);
   } @else {
     @error "#{$size}px은 지정되지 않은 폰트 사이즈 입니다. 수정 해주세요.";
