@@ -1,0 +1,40 @@
+.sc-talent {
+  .talent-inner {
+    display: flex;
+    height: 100vh;
+    padding: 0 100px;
+    overflow-y: scroll;
+    .talent-title {
+      flex: 0 0 470px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      @include font-size(72);
+    }
+    .talent-contents {
+      flex: 0 0 calc(100% - 470px);
+      max-width: calc(100% - 470px);
+      display: flex;
+      flex-direction: column;
+      gap: 186px;
+      padding: 100vh 0;
+      .user {
+        max-width: 46.4%;
+        align-self: flex-end;
+        img {
+        }
+        &-desc {
+          margin-top: 12px;
+          @include font-size(16);
+        }
+      }
+      .user:nth-child(2) {
+        align-self: flex-start;
+      }
+      .user:last-child {
+        padding-bottom: 100vh;
+      }
+    }
+  }
+}

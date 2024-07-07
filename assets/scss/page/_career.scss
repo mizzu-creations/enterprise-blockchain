@@ -9,7 +9,6 @@
     .career-title {
       max-width: 50%;
       @include font-size(72);
-      font-family: $font-kr;
     }
     .desc-area {
       max-width: 50%;
@@ -17,7 +16,6 @@
       padding-left: 100px;
       .career-desc {
         @include font-size(24);
-        font-family: $font-kr;
       }
     }
   }

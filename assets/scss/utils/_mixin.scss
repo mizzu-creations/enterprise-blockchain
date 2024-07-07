@@ -14,6 +14,7 @@
     14: 1,
   );
   @if map-has-key($line-heights, $size) {
+    font-family: $font-kr;
     font-size: #{$size}px;
     font-weight: 600;
     line-height: map-get($line-heights, $size);
