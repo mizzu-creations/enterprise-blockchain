@@ -711,4 +711,58 @@ body {
   line-height: 1;
   font-weight: 400;
   line-height: 1.63;
+}
+
+.sc-gradation {
+  position: relative;
+}
+.sc-gradation .group-block {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 175px;
+}
+.sc-gradation .group-block::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 2px);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  outline: 2px solid #000;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.sc-gradation .group-block .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.sc-gradation .group-block .box.pink {
+  background-color: #e657af;
+}
+.sc-gradation .group-block .box.blue {
+  background-color: #0049ff;
+}
+.sc-gradation .group-block .box.green {
+  background-color: #00bf41;
+}
+.sc-gradation .desc-area {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+.sc-gradation .desc-area .gradation-desc {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
