@@ -1,17 +1,230 @@
 .sc-service {
   .flex {
-    display: flex;
+    padding: 0 100px;
     .card-lock {
+      visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
       .gradient-text {
+        @include gradient-text(40);
       }
     }
     .group-service {
+      flex: 1;
+      margin-left: 800px;
+      padding-top: 13.5417vw;
+      .service-content {
+        color: #fff;
+        &:first-child {
+          .service-title {
+            @include font-size(72);
+          }
+          .service-desc {
+            padding: 34px 0 80px;
+            @include font-size(24);
+            font-weight: 700;
+          }
+          .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            .service-item {
+              display: flex;
+              align-items: center;
+              gap: 52px;
+              .gradient-card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex: 0 0.5 400px;
+                height: 200px;
+                border-radius: 20px;
+                border: 2px solid transparent;
+                background-image: linear-gradient(#000, #000),
+                  linear-gradient(300deg, $cr-pink, $cr-blue, $cr-green);
+                background-origin: border-box;
+                background-clip: content-box, border-box;
+                .gradient-text {
+                  @include gradient-text(28);
+                  text-align: center;
+                }
+              }
+              .service-name {
+                @include font-size(24);
+              }
+            }
+          }
+        }
+        &:last-child {
+          margin-top: 160px;
+          .service-title {
+            @include font-size(60);
+            margin-bottom: 80px;
+          }
+          .service-list {
+            display: flex;
+            gap: 50px;
+            .service-item {
+              flex: 0 1 300px;
+              p {
+                padding-top: 24px;
+                @include font-size(24);
+              }
+            }
+          }
+        }
+      }
     }
   }
   .group-review {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
     .review-list {
+      display: flex;
+      gap: 40px;
+      .review-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 400px;
+        height: 540px;
+        padding: 34px;
+        color: #fff;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 20px;
+          background-color: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(36px);
+        }
+        &:nth-child(1) {
+          justify-content: center;
+          align-items: center;
+          margin-left: 100px;
+          .gradient-text {
+            @include gradient-text(40);
+            z-index: 1;
+          }
+          &::before {
+            content: "";
+            width: 160%;
+            height: 160%;
+            position: absolute;
+            left: -30%;
+            top: -30%;
+            background: url(../../assets/images/card/card-glow.png) no-repeat
+              center / cover;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #000;
+            border-radius: 20px;
+          }
+        }
+        .bg {
+          width: 400px;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &:nth-child(2) {
+          .bg {
+            height: 100%;
+            background: url(../../assets/images/card/image-sec-2-1.png)
+              no-repeat top/cover;
+          }
+          .profile-circle {
+            background-color: $cr-hpink;
+          }
+        }
+        &:nth-child(3) {
+          .bg {
+            height: 100%;
+            background: url(../../assets/images/card/image-sec-2-2.png)
+              no-repeat top/cover;
+          }
+          .profile-circle {
+            background-color: $cr-blue;
+          }
+        }
+        &:nth-child(4) {
+          .bg {
+            height: 100%;
+            background: url(../../assets/images/card/image-sec-2-3.png)
+              no-repeat top/cover;
+          }
+          .profile-circle {
+            background-color: $cr-vgreen;
+          }
+        }
+        .top-area {
+          z-index: 1;
+          .title-wrap {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            min-height: 110px;
+            @include font-size(50);
+            font-family: $font-en;
+            line-height: 1;
+            &::after {
+              content: "****";
+              font-size: 30px;
+            }
+          }
+          .desc {
+            padding-top: 40px;
+            @include font-size(16);
+          }
+        }
+        .info-area {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          z-index: 1;
+          .user {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            .profile-circle {
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+            }
+            .user-name {
+              @include font-size(16);
+              font-weight: 700;
+            }
+          }
+          .ic-info {
+            width: 40px;
+            height: 40px;
+            background: url(../../assets/images/card/contract-icon.png)
+              no-repeat 50% / cover;
+          }
+        }
+      }
     }
     .review-title {
+      padding-left: 200px;
+      @include font-size(72);
+      font-weight: 700;
+      color: #fff;
     }
   }
 }

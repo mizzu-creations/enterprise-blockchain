@@ -55,15 +55,15 @@ ul {
   overflow: hidden;
 }
 
-.uppercase {
-  text-transform: uppercase;
-}
-
 body {
   word-break: keep-all;
   overflow-x: hidden;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 body {
@@ -117,6 +117,7 @@ body {
 
 .gradient-card-frame {
   width: 400px;
+  min-width: 400px;
   height: 540px;
   border: 2px solid transparent !important;
   border-radius: 20px;
@@ -759,7 +760,7 @@ body {
   background-color: #0049ff;
 }
 .sc-gradation .group-block .box.green {
-  background-color: #00bf41;
+  background-color: #43cf2e;
 }
 .sc-gradation .desc-area {
   width: 100%;
@@ -882,10 +883,341 @@ body {
 }
 
 .sc-service .flex {
+  padding: 0 100px;
+}
+.sc-service .flex .card-lock {
+  visibility: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
 }
+.sc-service .flex .card-lock .gradient-text {
+  background-image: -webkit-gradient(linear, left top, right top, from(#43cf2e), color-stop(#0049ff), to(#e657af));
+  background-image: linear-gradient(90deg, #43cf2e, #0049ff, #e657af);
+  background-size: cover;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.25;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+}
+.sc-service .flex .group-service {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 800px;
+  padding-top: 13.5417vw;
+}
+.sc-service .flex .group-service .service-content {
+  color: #fff;
+}
+.sc-service .flex .group-service .service-content:first-child .service-title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+}
+.sc-service .flex .group-service .service-content:first-child .service-desc {
+  padding: 34px 0 80px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
+  font-weight: 700;
+}
+.sc-service .flex .group-service .service-content:first-child .service-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+}
+.sc-service .flex .group-service .service-content:first-child .service-list .service-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 52px;
+}
+.sc-service .flex .group-service .service-content:first-child .service-list .service-item .gradient-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0.5 400px;
+          flex: 0 0.5 400px;
+  height: 200px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#000, #000), linear-gradient(300deg, #e657af, #0049ff, #43cf2e);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+.sc-service .flex .group-service .service-content:first-child .service-list .service-item .gradient-card .gradient-text {
+  background-image: -webkit-gradient(linear, left top, right top, from(#43cf2e), color-stop(#0049ff), to(#e657af));
+  background-image: linear-gradient(90deg, #43cf2e, #0049ff, #e657af);
+  background-size: cover;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.43;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+.sc-service .flex .group-service .service-content:first-child .service-list .service-item .service-name {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
+}
+.sc-service .flex .group-service .service-content:last-child {
+  margin-top: 160px;
+}
+.sc-service .flex .group-service .service-content:last-child .service-title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 80px;
+}
+.sc-service .flex .group-service .service-content:last-child .service-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+}
+.sc-service .flex .group-service .service-content:last-child .service-list .service-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 300px;
+          flex: 0 1 300px;
+}
+.sc-service .flex .group-service .service-content:last-child .service-list .service-item p {
+  padding-top: 24px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
+}
+.sc-service .group-review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background-color: #000;
+}
+.sc-service .group-review .review-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+.sc-service .group-review .review-list .review-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  height: 540px;
+  padding: 34px;
+  color: #fff;
+}
+.sc-service .group-review .review-list .review-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(36px);
+          backdrop-filter: blur(36px);
+}
+.sc-service .group-review .review-list .review-item:nth-child(1) {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 100px;
+}
+.sc-service .group-review .review-list .review-item:nth-child(1) .gradient-text {
+  background-image: -webkit-gradient(linear, left top, right top, from(#43cf2e), color-stop(#0049ff), to(#e657af));
+  background-image: linear-gradient(90deg, #43cf2e, #0049ff, #e657af);
+  background-size: cover;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.25;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  z-index: 1;
+}
+.sc-service .group-review .review-list .review-item:nth-child(1)::before {
+  content: "";
+  width: 160%;
+  height: 160%;
+  position: absolute;
+  left: -30%;
+  top: -30%;
+  background: url(../../assets/images/card/card-glow.png) no-repeat center/cover;
+}
+.sc-service .group-review .review-list .review-item:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  border-radius: 20px;
+}
+.sc-service .group-review .review-list .review-item .bg {
+  width: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.sc-service .group-review .review-list .review-item:nth-child(2) .bg {
+  height: 100%;
+  background: url(../../assets/images/card/image-sec-2-1.png) no-repeat top/cover;
+}
+.sc-service .group-review .review-list .review-item:nth-child(2) .profile-circle {
+  background-color: #ff009d;
+}
+.sc-service .group-review .review-list .review-item:nth-child(3) .bg {
+  height: 100%;
+  background: url(../../assets/images/card/image-sec-2-2.png) no-repeat top/cover;
+}
+.sc-service .group-review .review-list .review-item:nth-child(3) .profile-circle {
+  background-color: #0049ff;
+}
+.sc-service .group-review .review-list .review-item:nth-child(4) .bg {
+  height: 100%;
+  background: url(../../assets/images/card/image-sec-2-3.png) no-repeat top/cover;
+}
+.sc-service .group-review .review-list .review-item:nth-child(4) .profile-circle {
+  background-color: #26ff00;
+}
+.sc-service .group-review .review-list .review-item .top-area {
+  z-index: 1;
+}
+.sc-service .group-review .review-list .review-item .top-area .title-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 110px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: normal;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  line-height: 1;
+}
+.sc-service .group-review .review-list .review-item .top-area .title-wrap::after {
+  content: "****";
+  font-size: 30px;
+}
+.sc-service .group-review .review-list .review-item .top-area .desc {
+  padding-top: 40px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.63;
+}
+.sc-service .group-review .review-list .review-item .info-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+.sc-service .group-review .review-list .review-item .info-area .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 9px;
+}
+.sc-service .group-review .review-list .review-item .info-area .user .profile-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.sc-service .group-review .review-list .review-item .info-area .user .user-name {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.63;
+  font-weight: 700;
+}
+.sc-service .group-review .review-list .review-item .info-area .ic-info {
+  width: 40px;
+  height: 40px;
+  background: url(../../assets/images/card/contract-icon.png) no-repeat 50%/cover;
+}
+.sc-service .group-review .review-title {
+  padding-left: 200px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+  font-weight: 700;
+  color: #fff;
+}
+
 .sc-participation .participation-inner {
   padding: 200px 100px;
 }
@@ -955,7 +1287,7 @@ body {
   background-color: #0049ff;
 }
 .sc-participation .group-join .box:nth-child(3n-2) {
-  background-color: #00bf41;
+  background-color: #43cf2e;
 }
 .sc-participation .group-join .box:nth-child(3n) {
   background-color: #e657af;

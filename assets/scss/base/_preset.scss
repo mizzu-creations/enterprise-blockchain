@@ -7,12 +7,12 @@
   overflow: hidden;
 }
 
-.uppercase {
-  text-transform: uppercase;
-}
-
 body {
   word-break: keep-all;
   overflow-x: hidden;
   transition: background-color 0.5s;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }

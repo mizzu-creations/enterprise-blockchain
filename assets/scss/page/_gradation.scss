@@ -19,13 +19,13 @@
     .box {
       flex: 1;
       &.pink {
-        background-color: #e657af;
+        background-color: $cr-pink;
       }
       &.blue {
-        background-color: #0049ff;
+        background-color: $cr-blue;
       }
       &.green {
-        background-color: #00bf41;
+        background-color: $cr-green;
       }
     }
   }

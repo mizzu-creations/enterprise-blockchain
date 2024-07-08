@@ -1,11 +1,12 @@
 .gradient-card-frame {
   width: 400px;
+  min-width: 400px;
   height: 540px;
   border: 2px solid transparent !important;
   border-radius: 20px;
   background-color: #000;
   background-image: linear-gradient(#000, #000),
-    linear-gradient(315deg, #e657af, #0049ff, #43cf2e);
+    linear-gradient(315deg, $cr-pink, $cr-blue, $cr-green);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }

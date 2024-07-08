@@ -42,13 +42,13 @@
       align-items: center;
       padding: 10px 72px;
       &:nth-child(3n - 1) {
-        background-color: #0049ff;
+        background-color: $cr-blue;
       }
       &:nth-child(3n - 2) {
-        background-color: #00bf41;
+        background-color: $cr-green;
       }
       &:nth-child(3n) {
-        background-color: #e657af;
+        background-color: $cr-pink;
       }
       .text-area {
         display: flex;
