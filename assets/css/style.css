@@ -1066,7 +1066,7 @@ body {
   right: 0;
   bottom: 0;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: hsla(0, 0%, 42%, 0.3);
   -webkit-backdrop-filter: blur(36px);
           backdrop-filter: blur(36px);
 }
@@ -1307,4 +1307,265 @@ body {
 }
 .sc-participation .group-join .box .text-area span {
   font-style: italic;
+}
+
+.sc-future {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.sc-future .future-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-x: scroll;
+}
+.sc-future .future-inner .future-title {
+  padding: 0 160px 0 100px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.28;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.sc-future .future-inner .future-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sc-future .future-inner .future-contents .asset-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  width: 400px;
+  height: 540px;
+  border-radius: 20px;
+  background-color: #e657af;
+  color: #fff;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item:nth-child(2) {
+  background-color: #0049ff;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item:nth-child(2) .title::after {
+  content: "****";
+  font-size: 30px;
+  line-height: 1.24;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item:nth-child(3) {
+  background: url(/assets/images/card/image-sec-3-3.png) no-repeat center/cover;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background-color: hsla(0, 0%, 42%, 0.3);
+  -webkit-backdrop-filter: blur(36px);
+          backdrop-filter: blur(36px);
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 34px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .top .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .top .title h3 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: normal;
+  line-height: 1.24;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .top .title span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.63;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .top .title span::before {
+  content: "****";
+  font-size: 30px;
+  line-height: 1.24;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .top .contents {
+  padding-top: 10px;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .top .contents .contents-list .contents-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 30px;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .top .contents .contents-list .contents-item strong {
+  font-size: 20px;
+  font-weight: 600;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .top .contents .contents-list .contents-item span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.63;
+  font-weight: 400;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.63;
+  font-weight: 700;
+}
+.sc-future .future-inner .future-contents .asset-list .asset-item .asset-wrap .info .ic-info {
+  width: 40px;
+  height: 40px;
+  background: url(../../assets/images/card/contract-icon.png) no-repeat 50%/cover;
+}
+.sc-future .future-inner .future-contents .future-desc {
+  padding: 0 60px 0 160px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.sc-future .future-bottom {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 98%, 0)), to(#fff));
+  background-image: linear-gradient(180deg, hsla(0, 0%, 98%, 0), #fff);
+  text-align: center;
+  z-index: 40;
+}
+.sc-future .future-bottom .group-arrow {
+  margin-top: 10px;
+}
+.sc-future .future-bottom .group-arrow .arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 14px;
+}
+.sc-future .future-bottom .group-arrow .arrow-item {
+  width: 27px;
+  height: 27px;
+  border-width: 8px;
+  border-left: 0;
+  border-bottom: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-style: solid;
+}
+.sc-future .future-bottom .group-arrow .arrow-item:nth-child(1) {
+  -o-border-image: linear-gradient(60deg, #e657af 60%, #0049ff 160%);
+     border-image: linear-gradient(60deg, #e657af 60%, #0049ff 160%);
+  border-image-slice: 1;
+}
+.sc-future .future-bottom .group-arrow .arrow-item:nth-child(2) {
+  -o-border-image: linear-gradient(60deg, #e657af 20%, #0049ff 145%);
+     border-image: linear-gradient(60deg, #e657af 20%, #0049ff 145%);
+  border-image-slice: 1;
+}
+.sc-future .future-bottom .group-arrow .arrow-item:nth-child(3) {
+  -o-border-image: linear-gradient(60deg, #e657af, #0049ff 130%);
+     border-image: linear-gradient(60deg, #e657af, #0049ff 130%);
+  border-image-slice: 1;
+}
+.sc-future .future-bottom .group-arrow .arrow-item:nth-child(4) {
+  -o-border-image: linear-gradient(50deg, #e657af, #0049ff 100%);
+     border-image: linear-gradient(50deg, #e657af, #0049ff 100%);
+  border-image-slice: 1;
+}
+.sc-future .future-bottom .group-arrow .arrow-item:nth-child(5) {
+  -o-border-image: linear-gradient(50deg, #e657af, #0049ff 80%);
+     border-image: linear-gradient(50deg, #e657af, #0049ff 80%);
+  border-image-slice: 1;
+}
+.sc-future .future-bottom .group-arrow .arrow-item:nth-child(6) {
+  -o-border-image: linear-gradient(50deg, #0049ff 45%, #43cf2e 135%);
+     border-image: linear-gradient(50deg, #0049ff 45%, #43cf2e 135%);
+  border-image-slice: 1;
+}
+.sc-future .future-bottom .group-arrow .arrow-item:nth-child(7) {
+  -o-border-image: linear-gradient(51deg, #0049ff, #43cf2e 75%);
+     border-image: linear-gradient(51deg, #0049ff, #43cf2e 75%);
+  border-image-slice: 1;
+}
+.sc-future .future-bottom .group-arrow .arrow-title {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
 }/*# sourceMappingURL=style.css.map */
