@@ -1,0 +1,139 @@
+.sc-creator {
+  height: 100vh;
+  overflow-y: scroll;
+  .group-top {
+    position: relative;
+    .title-wrap {
+      position: absolute;
+      top: 50%;
+      left: 200px;
+      transform: translateY(-50%);
+      color: #fff;
+      .creator-title {
+        @include font-size(60);
+        line-height: 1.2;
+      }
+      p {
+        padding-top: 26px;
+        @include font-size(24);
+      }
+    }
+    .bg {
+    }
+  }
+  .group-bottom {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    .creator-title {
+      flex-shrink: 0;
+      padding: 0 160px 0 100px;
+      @include font-size(72);
+      font-weight: 700;
+    }
+    .record-list {
+      display: flex;
+      gap: 40px;
+      .record-item {
+        position: relative;
+        flex-shrink: 0;
+        width: 400px;
+        height: 540px;
+        border-radius: 20px;
+        color: #fff;
+        &:nth-child(1) {
+          width: 400px;
+          height: 540px;
+          background: url(/assets/images/card/image-sec-4-1.png) no-repeat
+            center / cover;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            border-radius: 20px;
+            background-color: hsla(0, 0%, 42%, 0.3);
+            backdrop-filter: blur(36px);
+          }
+          .title {
+            display: flex;
+            justify-content: space-between;
+            &::after {
+              content: "****";
+              font-size: 30px;
+            }
+          }
+        }
+        &:nth-child(2) {
+          background-color: $cr-blue;
+        }
+        &:nth-child(3) {
+          background-color: #000;
+        }
+        &:nth-child(4) {
+          background-color: #00bf41;
+        }
+        .item-wrap {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 34px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 20px;
+          .title {
+            min-height: 110px;
+            @include font-size(50);
+            line-height: 1.21;
+          }
+          .desc {
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            @include font-size(16);
+            span {
+              margin-top: 8px;
+            }
+          }
+          .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .user-box {
+              display: flex;
+              align-items: center;
+              gap: 9px;
+              .profile {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background-color: $cr-pink;
+              }
+              .name {
+                @include font-size(16);
+                font-weight: 700;
+              }
+            }
+            .ic-info {
+              width: 40px;
+              height: 40px;
+              background: url(../../assets/images/card/contract-icon.png)
+                no-repeat 50% / cover;
+            }
+          }
+        }
+      }
+    }
+    .creator-desc {
+      padding: 0 60px 0 160px;
+      flex-shrink: 0;
+      @include font-size(24);
+      font-weight: 700;
+    }
+  }
+}

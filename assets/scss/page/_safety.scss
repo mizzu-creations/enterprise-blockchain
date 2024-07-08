@@ -25,7 +25,6 @@
           display: flex;
           justify-content: space-between;
           @include font-size(50);
-          font-family: $font-en;
           line-height: 1;
           &::after {
             content: "****";
@@ -42,7 +41,6 @@
           align-items: center;
           span {
             @include font-size(24);
-            font-family: $font-en;
           }
           .ic-info {
             width: 40px;

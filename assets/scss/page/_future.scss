@@ -93,7 +93,6 @@
                     span {
                       @include font-size(16);
                       font-weight: 400;
-                      font-family: $font-en;
                     }
                   }
                 }
@@ -119,7 +118,6 @@
             //   align-items: center;
             //   span {
             //     @include font-size(24);
-            //     font-family: $font-en;
             //   }
             //   .ic-info {
             //     width: 40px;

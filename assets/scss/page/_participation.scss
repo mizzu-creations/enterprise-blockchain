@@ -54,7 +54,6 @@
         display: flex;
         gap: 7px;
         @include font-size(24);
-        font-family: $font-en;
         color: #fff;
         z-index: 2;
         span {
