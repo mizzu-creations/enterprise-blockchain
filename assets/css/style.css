@@ -104,7 +104,7 @@ body {
 .scroll-down {
   width: 40px;
   height: 40px;
-  position: absolute;
+  position: fixed;
   bottom: 40px;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -418,22 +418,27 @@ body {
 
 .sc-intro {
   position: relative;
+  height: 800vh;
 }
 .sc-intro .bg {
-  z-index: -1;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
 }
 .sc-intro .bg-video {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .sc-intro .intro-contents {
-  display: none;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  opacity: 1;
+  opacity: 0;
 }
 .sc-intro .intro-contents .intro-desc {
   position: absolute;
@@ -446,6 +451,14 @@ body {
   line-height: 1.35;
   font-weight: 700;
   color: #fff;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.sc-intro .intro-contents .intro-desc:last-child {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.67;
 }
 
 .sc-showcase {

@@ -10,6 +10,7 @@ import {
 } from "./setGlobalValues.js";
 import { renderHeader, changeHeaderTheme } from "./header.js";
 import { handleScrollBtnTop } from "./btnTop.js";
+import { scIntroAnimation } from "./scrollAnimation.js";
 
 $(function () {
   // 초기화 함수 호출
@@ -22,6 +23,9 @@ $(function () {
 
   // #btn-top 노출 및 클릭 이벤트 적용
   handleScrollBtnTop();
+
+  // section intro 스크롤 애니메이션
+  scIntroAnimation();
 });
 
 function handleResize() {

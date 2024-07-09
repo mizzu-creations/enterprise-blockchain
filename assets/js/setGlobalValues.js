@@ -19,22 +19,22 @@ export const initializeGlobalValues = () => {
   const { vw, vh } = getViewportDimensions();
   const scrollPercentage = getScrollPercentage();
 
-  setCSSVariable("--vw", `${vw}`);
-  setCSSVariable("--vh", `${vh}`);
-  setCSSVariable("--scroll-percentage", `${scrollPercentage}`);
+  setCSSVariable("--vw", vw);
+  setCSSVariable("--vh", vh);
+  setCSSVariable("--scroll-percentage", scrollPercentage);
 
-  $("html").attr("data-vw", `${vw}`);
-  $("html").attr("data-vh", `${vh}`);
-  $("html").attr("data-scroll-percentage", `${scrollPercentage}`);
+  $("html").attr("data-vw", vw);
+  $("html").attr("data-vh", vh);
+  $("html").attr("data-scroll-percentage", scrollPercentage);
 };
 // vw, vh 값 리사이즈 업데이트
 export const handleResizeGlobalValues = () => {
   const { vw, vh } = getViewportDimensions();
-  setCSSVariable("--vw", `${vw}`);
-  setCSSVariable("--vh", `${vh}`);
+  setCSSVariable("--vw", vw);
+  setCSSVariable("--vh", vh);
 
-  $("html").attr("data-vw", `${vw}`);
-  $("html").attr("data-vh", `${vh}`);
+  $("html").attr("data-vw", vw);
+  $("html").attr("data-vh", vh);
 };
 // scrollPercentage 스크롤 업데이트
 export const handleScrollGlobalValues = () => {

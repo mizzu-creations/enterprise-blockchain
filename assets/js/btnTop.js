@@ -9,7 +9,7 @@ export function handleScrollBtnTop() {
       let currentScroll = getCustomComputedStyle("--scroll-percentage");
 
       let scrollTop = $(window).scrollTop();
-      if (scrollTop === 0) {
+      if (scrollTop === 0 || currentScroll <= 0.4) {
         $("#btn-top").removeClass("show");
       } else if (scrollTop < lastScrollTop || currentScroll >= 0.95) {
         $("#btn-top").addClass("show"); // down
