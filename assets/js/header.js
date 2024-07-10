@@ -10,7 +10,7 @@ export const changeHeaderTheme = (currentScroll) => {
   // 색상 전환
   $("#header").removeClass("dark");
   if (
-    (currentScroll >= 0.46 && currentScroll < 0.57) ||
+    (currentScroll >= 0.564 && currentScroll < 0.7) ||
     currentScroll >= 0.87
   ) {
     $("#header").addClass("dark");

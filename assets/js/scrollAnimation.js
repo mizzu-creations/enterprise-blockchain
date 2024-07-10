@@ -28,3 +28,55 @@ export const scIntroAnimation = () => {
     scrub: true,
   });
 };
+export const scShowcaseAnimation = () => {
+  const tlShowcase = gsap.timeline();
+  tlShowcase
+    .to(".showcase-contents", { opacity: 1, duration: 0.5 })
+    .to(".showcase-desc.desc01 span", { opacity: 1, duration: 0.5 }, "<")
+    .to(
+      ".showcase-desc.desc01 span",
+      {
+        xPercent: (i, _, targets) => {
+          if (i === 0) return 100;
+          if (i === targets.length - 1) return -100;
+          return 0;
+        },
+        duration: 0.2,
+      },
+      "-=0.2"
+    )
+    .to(".showcase-contents", { opacity: 0, duration: 0.5 }, "<")
+    .to(
+      ".showcase-desc.desc01 span",
+      {
+        opacity: 0,
+        duration: 0.5,
+      },
+      "-=0.2"
+    )
+    .to(
+      ".sc-showcase .bg img:nth-child(3)",
+      { yPercent: -100, duration: 1 },
+      "<"
+    )
+    .to(".sc-showcase .bg img:nth-child(2)", { yPercent: -100, duration: 1 })
+    .to(".showcase-contents", { opacity: 1, duration: 0.5 })
+    .to(
+      ".showcase-desc.desc02",
+      {
+        opacity: 1,
+        duration: 0.5,
+      },
+      "<"
+    );
+
+  ScrollTrigger.create({
+    trigger: ".sc-showcase",
+    start: "top top",
+    end: "bottom bottom",
+    animation: tlShowcase,
+    pin: true,
+    pinSpacing: false,
+    scrub: true,
+  });
+};

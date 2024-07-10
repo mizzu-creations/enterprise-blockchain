@@ -462,7 +462,7 @@ body {
 }
 
 .sc-showcase {
-  height: 100vh;
+  height: 600vh;
 }
 .sc-showcase .bg {
   height: 100vh;
@@ -476,18 +476,14 @@ body {
   right: 0;
   bottom: 0;
 }
-.sc-showcase .bg img:last-child {
-  top: -800px;
-}
 .sc-showcase .showcase-contents {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
-  opacity: 1;
+  opacity: 0;
 }
 .sc-showcase .showcase-contents > [class*=-desc] {
   position: absolute;
@@ -510,10 +506,14 @@ body {
   font-weight: 600;
   line-height: 1.2;
 }
+.sc-showcase .showcase-contents .desc01 span {
+  opacity: 0;
+}
 .sc-showcase .showcase-contents .desc02 {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.67;
+  opacity: 0;
 }
 
 .sc-talent .talent-inner {
