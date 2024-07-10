@@ -1,68 +1,70 @@
 .sc-safety {
-  display: flex;
-  align-items: center;
-  gap: 160px;
-  height: 100vh;
-  padding: 0 100px;
-  color: #fff;
-  .safety-title {
-    @include font-size(72);
-  }
-  .group-data-cards {
-    .card-list {
-      display: flex;
-      gap: 40px;
-      .card-item {
+  .safety-inner {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+    height: 100vh;
+    color: #fff;
+    .safety-title {
+      padding-left: 100px;
+      @include font-size(72);
+    }
+    .group-data-cards {
+      .card-list {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 400px;
-        height: 540px;
-        padding: 34px;
-        background-color: #000;
-        border: 2px solid #fff;
-        border-radius: 20px;
-        .card-header {
+        gap: 40px;
+        .card-item {
           display: flex;
+          flex-direction: column;
           justify-content: space-between;
-          @include font-size(50);
-          line-height: 1;
-          &::after {
-            content: "****";
-            font-size: 30px;
+          width: 400px;
+          height: 540px;
+          padding: 34px;
+          background-color: #000;
+          border: 2px solid #fff;
+          border-radius: 20px;
+          .card-header {
+            display: flex;
+            justify-content: space-between;
+            @include font-size(50);
+            line-height: 1;
+            &::after {
+              content: "****";
+              font-size: 30px;
+            }
+          }
+          img {
+            width: 100%;
+            padding: 56px 50px 0 0;
+          }
+          .card-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+              @include font-size(24);
+            }
+            .ic-info {
+              width: 40px;
+              height: 40px;
+              background: url(../../assets/images/card/contract-icon.png)
+                no-repeat 50% / cover;
+            }
           }
         }
-        img {
-          width: 100%;
-          padding: 56px 50px 0 0;
-        }
-        .card-info {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          span {
-            @include font-size(24);
-          }
-          .ic-info {
-            width: 40px;
-            height: 40px;
-            background: url(../../assets/images/card/contract-icon.png)
-              no-repeat 50% / cover;
-          }
-        }
-      }
-      .card-lock {
-        position: relative;
-        padding: 0;
-        img {
-          width: 150px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
+        .card-lock {
+          position: relative;
           padding: 0;
-          transform: translate(-50%, -50%);
-          &.lock {
-            display: none;
+          img {
+            width: 150px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 0;
+            transform: translate(-50%, -50%);
+            &.lock {
+              opacity: 0;
+            }
           }
         }
       }

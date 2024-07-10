@@ -235,12 +235,63 @@ const scGradationAnimation = () => {
 // section safety 가로 스크롤 애니메이션
 const scSafetyAnimation = () => {
   const tlSafety = gsap.timeline();
+  tlSafety
+    .to(".safety-inner", {
+      x: -757,
+      duration: 1,
+    })
+    .to(".sc-safety .card-item:nth-child(1)", {
+      x: 200,
+      duration: 1,
+    })
+    .to(
+      ".sc-safety .card-item:nth-child(2)",
+      {
+        x: -240,
+        duration: 1,
+      },
+      "<"
+    )
+    .to(
+      ".sc-safety .card-item:nth-child(3)",
+      {
+        x: -680,
+        duration: 1,
+      },
+      "<"
+    )
+    .to(
+      ".sc-safety .card-item:nth-child(4)",
+      {
+        x: -1120,
+        duration: 1,
+      },
+      "<"
+    )
+    .to(
+      ".sc-safety .unlock",
+      {
+        opacity: 0,
+        duration: 1,
+      },
+      "-=2"
+    )
+    .to(
+      ".sc-safety .lock",
+      {
+        opacity: 1,
+        duration: 1,
+      },
+      "-=1"
+    );
 
   ScrollTrigger.create({
     trigger: ".sc-safety",
     start: "top top",
-    end: "bottom bottom",
+    end: "+=2000",
     animation: tlSafety,
+    pin: true,
+    pinSpacing: true,
     markers: true,
     scrub: true,
   });

@@ -791,7 +791,7 @@ body {
   color: #fff;
 }
 
-.sc-safety {
+.sc-safety .safety-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -800,21 +800,21 @@ body {
           align-items: center;
   gap: 160px;
   height: 100vh;
-  padding: 0 100px;
   color: #fff;
 }
-.sc-safety .safety-title {
+.sc-safety .safety-inner .safety-title {
+  padding-left: 100px;
   font-size: 72px;
   font-weight: 600;
   line-height: 1.28;
 }
-.sc-safety .group-data-cards .card-list {
+.sc-safety .safety-inner .group-data-cards .card-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 40px;
 }
-.sc-safety .group-data-cards .card-list .card-item {
+.sc-safety .safety-inner .group-data-cards .card-list .card-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -832,7 +832,7 @@ body {
   border: 2px solid #fff;
   border-radius: 20px;
 }
-.sc-safety .group-data-cards .card-list .card-item .card-header {
+.sc-safety .safety-inner .group-data-cards .card-list .card-item .card-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -844,15 +844,15 @@ body {
   line-height: normal;
   line-height: 1;
 }
-.sc-safety .group-data-cards .card-list .card-item .card-header::after {
+.sc-safety .safety-inner .group-data-cards .card-list .card-item .card-header::after {
   content: "****";
   font-size: 30px;
 }
-.sc-safety .group-data-cards .card-list .card-item img {
+.sc-safety .safety-inner .group-data-cards .card-list .card-item img {
   width: 100%;
   padding: 56px 50px 0 0;
 }
-.sc-safety .group-data-cards .card-list .card-item .card-info {
+.sc-safety .safety-inner .group-data-cards .card-list .card-item .card-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -863,21 +863,21 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.sc-safety .group-data-cards .card-list .card-item .card-info span {
+.sc-safety .safety-inner .group-data-cards .card-list .card-item .card-info span {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.67;
 }
-.sc-safety .group-data-cards .card-list .card-item .card-info .ic-info {
+.sc-safety .safety-inner .group-data-cards .card-list .card-item .card-info .ic-info {
   width: 40px;
   height: 40px;
   background: url(../../assets/images/card/contract-icon.png) no-repeat 50%/cover;
 }
-.sc-safety .group-data-cards .card-list .card-lock {
+.sc-safety .safety-inner .group-data-cards .card-list .card-lock {
   position: relative;
   padding: 0;
 }
-.sc-safety .group-data-cards .card-list .card-lock img {
+.sc-safety .safety-inner .group-data-cards .card-list .card-lock img {
   width: 150px;
   position: absolute;
   top: 50%;
@@ -886,8 +886,8 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-.sc-safety .group-data-cards .card-list .card-lock img.lock {
-  display: none;
+.sc-safety .safety-inner .group-data-cards .card-list .card-lock img.lock {
+  opacity: 0;
 }
 
 .sc-service .flex {
