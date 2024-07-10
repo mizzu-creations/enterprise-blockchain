@@ -8,6 +8,9 @@
   .sc-certification {
     @include desc-only-page(#fff);
     margin-top: 2000px;
+    .certification-desc {
+      color: #fff;
+    }
   }
   .sc-trend {
     @include desc-only-page(#000);

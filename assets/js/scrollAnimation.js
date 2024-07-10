@@ -189,6 +189,62 @@ const scPossibleAnimation = () => {
     scrub: true,
   });
 };
+// section gradation 스크롤 애니메이션
+const scGradationAnimation = () => {
+  const tlGradation = gsap.timeline();
+  tlGradation
+    .set(".sc-gradation .blue", {
+      xPercent: -50,
+    })
+    .set(".sc-gradation .green", {
+      xPercent: 50,
+    })
+    .to(".sc-gradation .blue", {
+      xPercent: 0,
+      duration: 0.5,
+    })
+    .to(
+      ".sc-gradation .green",
+      {
+        xPercent: 0,
+        duration: 0.5,
+      },
+      "<"
+    )
+    .to(".sc-gradation .desc-area", {
+      opacity: 1,
+      duration: 1,
+    })
+    .to(
+      ".sc-gradation .blur",
+      {
+        opacity: 1,
+        duration: 1,
+      },
+      "<"
+    );
+
+  ScrollTrigger.create({
+    trigger: ".sc-gradation",
+    start: "top bottom",
+    end: "+=1400",
+    animation: tlGradation,
+    scrub: true,
+  });
+};
+// section safety 가로 스크롤 애니메이션
+const scSafetyAnimation = () => {
+  const tlSafety = gsap.timeline();
+
+  ScrollTrigger.create({
+    trigger: ".sc-safety",
+    start: "top top",
+    end: "bottom bottom",
+    animation: tlSafety,
+    markers: true,
+    scrub: true,
+  });
+};
 
 export const sectionScrollAni = () => {
   scIntroAnimation();
@@ -197,4 +253,6 @@ export const sectionScrollAni = () => {
   scGlobalAnimation();
   scTalentAnimation();
   scPossibleAnimation();
+  scGradationAnimation();
+  scSafetyAnimation();
 };

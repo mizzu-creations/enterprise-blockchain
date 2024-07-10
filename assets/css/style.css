@@ -344,6 +344,9 @@ body {
   font-weight: 600;
   line-height: 1.67;
 }
+#contents .sc-certification .certification-desc {
+  color: #fff;
+}
 #contents .sc-trend {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -744,8 +747,7 @@ body {
   display: flex;
   height: 175px;
 }
-.sc-gradation .group-block::after {
-  content: "";
+.sc-gradation .group-block .blur {
   position: absolute;
   top: 1px;
   left: 0;
@@ -754,21 +756,21 @@ body {
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
   outline: 2px solid #000;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+  opacity: 0;
+  z-index: 1;
 }
-.sc-gradation .group-block .box {
+.sc-gradation .box {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
-.sc-gradation .group-block .box.pink {
+.sc-gradation .box.pink {
   background-color: #e657af;
 }
-.sc-gradation .group-block .box.blue {
+.sc-gradation .box.blue {
   background-color: #0049ff;
 }
-.sc-gradation .group-block .box.green {
+.sc-gradation .box.green {
   background-color: #43cf2e;
 }
 .sc-gradation .desc-area {
@@ -779,6 +781,8 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
+  opacity: 0;
+  z-index: 1;
 }
 .sc-gradation .desc-area .gradation-desc {
   font-size: 40px;
@@ -795,6 +799,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 160px;
+  height: 100vh;
   padding: 0 100px;
   color: #fff;
 }
