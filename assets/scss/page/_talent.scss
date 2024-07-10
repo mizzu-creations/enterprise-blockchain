@@ -1,15 +1,15 @@
 .sc-talent {
+  height: 300vh;
   .talent-inner {
     display: flex;
-    height: 100vh;
     padding: 0 100px;
-    overflow-y: scroll;
+    height: fit-content;
     .talent-title {
-      flex: 0 0 470px;
       display: flex;
       align-items: center;
+      flex: 0 0 470px;
+      height: 100vh;
       position: sticky;
-      top: 0;
       @include font-size(72);
     }
     .talent-contents {
@@ -18,7 +18,8 @@
       display: flex;
       flex-direction: column;
       gap: 186px;
-      padding: 100vh 0;
+      padding-top: 100vh;
+      height: fit-content;
       .user {
         max-width: 46.4%;
         align-self: flex-end;
@@ -29,9 +30,6 @@
       }
       .user:nth-child(2) {
         align-self: flex-start;
-      }
-      .user:last-child {
-        padding-bottom: 100vh;
       }
     }
   }

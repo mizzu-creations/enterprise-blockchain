@@ -154,10 +154,26 @@ const scGlobalAnimation = () => {
     scrub: true,
   });
 };
+// section talent 스크롤 애니메이션
+const scTalentAnimation = () => {
+  const tlTalent = gsap.timeline();
+  tlTalent.to(".talent-contents", { yPercent: -100, duration: 10 });
+
+  ScrollTrigger.create({
+    trigger: ".sc-talent",
+    start: "top top",
+    end: "bottom+=200 bottom",
+    animation: tlTalent,
+    pin: true,
+    pinSpacing: false,
+    scrub: true,
+  });
+};
 
 export const sectionScrollAni = () => {
   scIntroAnimation();
   scShowcaseAnimation();
   scWorthAnimation();
   scGlobalAnimation();
+  scTalentAnimation();
 };
