@@ -292,21 +292,23 @@ body {
   line-height: 1.28;
   color: #fff;
 }
-#contents .sc-worth::before, #contents .sc-worth::after {
-  content: "";
-  max-width: 21.875%;
-  width: 336px;
+#contents .sc-worth [class*=box-] {
+  min-width: 21.875%;
   height: 140px;
   position: absolute;
   background-color: #fff;
 }
-#contents .sc-worth::before {
+#contents .sc-worth .box-top {
   top: 0;
   right: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
-#contents .sc-worth::after {
+#contents .sc-worth .box-bottom {
   bottom: 0;
   left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 #contents .sc-certification {
   display: -webkit-box;
@@ -399,21 +401,23 @@ body {
   line-height: 1.28;
   color: #fff;
 }
-#contents .sc-global::before, #contents .sc-global::after {
-  content: "";
-  max-width: 21.875%;
-  width: 336px;
+#contents .sc-global [class*=box-] {
+  min-width: 21.875%;
   height: 140px;
   position: absolute;
   background-color: #fff;
 }
-#contents .sc-global::before {
+#contents .sc-global .box-top {
   top: 0;
   right: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
-#contents .sc-global::after {
+#contents .sc-global .box-bottom {
   bottom: 0;
   left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 .sc-intro {

@@ -1,4 +1,5 @@
-export const scIntroAnimation = () => {
+// section intro 스크롤 애니메이션
+const scIntroAnimation = () => {
   const tlIntro = gsap.timeline();
 
   const fadeInOut = (selector, duration = 0.5) => {
@@ -28,7 +29,8 @@ export const scIntroAnimation = () => {
     scrub: true,
   });
 };
-export const scShowcaseAnimation = () => {
+// section showcase 스크롤 애니메이션
+const scShowcaseAnimation = () => {
   const tlShowcase = gsap.timeline();
   tlShowcase
     .to(".showcase-contents", { opacity: 1, duration: 0.5 })
@@ -79,4 +81,83 @@ export const scShowcaseAnimation = () => {
     pinSpacing: false,
     scrub: true,
   });
+};
+// section worth 스크롤 애니메이션
+const scWorthAnimation = () => {
+  const tlWorth = gsap.timeline();
+  tlWorth
+    .to(
+      ".worth-title span",
+      {
+        xPercent: (i) => {
+          if (i === 0) return -170;
+          if (i === 2) return 134;
+          return 0;
+        },
+        duration: 0.2,
+      },
+      "-=0.2"
+    )
+    .to(
+      ".sc-worth div",
+      {
+        xPercent: (i) => {
+          if (i === 0) return -100;
+          if (i === 1) return 100;
+        },
+        duration: 0.2,
+      },
+      "<"
+    );
+
+  ScrollTrigger.create({
+    trigger: ".sc-worth",
+    start: "top 80%",
+    end: "bottom 90%",
+    animation: tlWorth,
+    scrub: true,
+  });
+};
+// section global 스크롤 애니메이션
+const scGlobalAnimation = () => {
+  const tlGlobal = gsap.timeline();
+  tlGlobal
+    .to(
+      ".global-title span",
+      {
+        xPercent: (i) => {
+          if (i === 0) return -115;
+          if (i === 2) return 125;
+          return 0;
+        },
+        duration: 0.2,
+      },
+      "-=0.2"
+    )
+    .to(
+      ".sc-global div",
+      {
+        xPercent: (i) => {
+          if (i === 0) return -100;
+          if (i === 1) return 100;
+        },
+        duration: 0.2,
+      },
+      "<"
+    );
+
+  ScrollTrigger.create({
+    trigger: ".sc-global",
+    start: "top 80%",
+    end: "bottom 90%",
+    animation: tlGlobal,
+    scrub: true,
+  });
+};
+
+export const sectionScrollAni = () => {
+  scIntroAnimation();
+  scShowcaseAnimation();
+  scWorthAnimation();
+  scGlobalAnimation();
 };

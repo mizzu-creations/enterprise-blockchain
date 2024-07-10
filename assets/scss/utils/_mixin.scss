@@ -38,22 +38,21 @@
       color: #fff;
     }
   }
-  &::before,
-  &::after {
-    content: "";
-    max-width: 21.875%;
-    width: 336px;
+  [class*="box-"] {
+    min-width: 21.875%;
     height: 140px;
     position: absolute;
     background-color: #fff;
   }
-  &::before {
+  .box-top {
     top: 0;
     right: 0;
+    transform: translateX(100%);
   }
-  &::after {
+  .box-bottom {
     bottom: 0;
     left: 0;
+    transform: translateX(-100%);
   }
 }
 
