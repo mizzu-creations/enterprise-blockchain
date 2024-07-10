@@ -2,14 +2,16 @@
   .flex {
     padding: 0 100px;
     .card-lock {
-      visibility: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
       position: fixed;
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
       .gradient-text {
         @include gradient-text(40);
+        opacity: 0;
       }
     }
     .group-service {
@@ -80,6 +82,7 @@
     }
   }
   .group-review {
+    position: relative;
     display: flex;
     align-items: center;
     height: 100vh;
@@ -107,15 +110,17 @@
           backdrop-filter: blur(36px);
         }
         &:nth-child(1) {
+          position: relative;
           justify-content: center;
           align-items: center;
           margin-left: 100px;
+          opacity: 0;
+          z-index: 4;
           .gradient-text {
             @include gradient-text(40);
             z-index: 1;
           }
-          &::before {
-            content: "";
+          .glow {
             width: 160%;
             height: 160%;
             position: absolute;
@@ -123,6 +128,7 @@
             top: -30%;
             background: url(../../assets/images/card/card-glow.png) no-repeat
               center / cover;
+            opacity: 0;
           }
           &::after {
             content: "";
@@ -142,6 +148,7 @@
           left: 0;
         }
         &:nth-child(2) {
+          z-index: 3;
           .bg {
             height: 100%;
             background: url(../../assets/images/card/image-sec-2-1.png)
@@ -152,6 +159,7 @@
           }
         }
         &:nth-child(3) {
+          z-index: 2;
           .bg {
             height: 100%;
             background: url(../../assets/images/card/image-sec-2-2.png)
@@ -162,6 +170,7 @@
           }
         }
         &:nth-child(4) {
+          z-index: 1;
           .bg {
             height: 100%;
             background: url(../../assets/images/card/image-sec-2-3.png)
@@ -219,10 +228,13 @@
       }
     }
     .review-title {
+      position: absolute;
+      left: 710px;
       padding-left: 200px;
       @include font-size(72);
       font-weight: 700;
       color: #fff;
+      opacity: 0;
     }
   }
 }

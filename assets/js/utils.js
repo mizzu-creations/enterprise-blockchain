@@ -9,7 +9,7 @@ export const getCustomComputedStyle = (property) => {
   return getComputedStyle(document.body).getPropertyValue(property);
 };
 export const updateBodyBackgroundColor = (currentScroll) => {
-  if (currentScroll >= 0.68 && currentScroll < 0.82) {
+  if (currentScroll >= 0.5113 && currentScroll < 0.9) {
     $("body").css("background-color", "#000");
   } else {
     $("body").css("background-color", "#fff");

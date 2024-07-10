@@ -894,7 +894,6 @@ body {
   padding: 0 100px;
 }
 .sc-service .flex .card-lock {
-  visibility: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -905,7 +904,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
-  top: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
 }
 .sc-service .flex .card-lock .gradient-text {
   background-image: -webkit-gradient(linear, left top, right top, from(#43cf2e), color-stop(#0049ff), to(#e657af));
@@ -918,6 +920,7 @@ body {
   font-weight: 600;
   line-height: 1.25;
   font-weight: 700;
+  opacity: 0;
 }
 .sc-service .flex .group-service {
   -webkit-box-flex: 1;
@@ -1025,6 +1028,7 @@ body {
   line-height: 1.67;
 }
 .sc-service .group-review {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1069,6 +1073,7 @@ body {
           backdrop-filter: blur(36px);
 }
 .sc-service .group-review .review-list .review-item:nth-child(1) {
+  position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1076,6 +1081,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-left: 100px;
+  opacity: 0;
+  z-index: 4;
 }
 .sc-service .group-review .review-list .review-item:nth-child(1) .gradient-text {
   background-image: -webkit-gradient(linear, left top, right top, from(#43cf2e), color-stop(#0049ff), to(#e657af));
@@ -1090,14 +1097,14 @@ body {
   font-weight: 700;
   z-index: 1;
 }
-.sc-service .group-review .review-list .review-item:nth-child(1)::before {
-  content: "";
+.sc-service .group-review .review-list .review-item:nth-child(1) .glow {
   width: 160%;
   height: 160%;
   position: absolute;
   left: -30%;
   top: -30%;
   background: url(../../assets/images/card/card-glow.png) no-repeat center/cover;
+  opacity: 0;
 }
 .sc-service .group-review .review-list .review-item:nth-child(1)::after {
   content: "";
@@ -1115,6 +1122,9 @@ body {
   top: 0;
   left: 0;
 }
+.sc-service .group-review .review-list .review-item:nth-child(2) {
+  z-index: 3;
+}
 .sc-service .group-review .review-list .review-item:nth-child(2) .bg {
   height: 100%;
   background: url(../../assets/images/card/image-sec-2-1.png) no-repeat top/cover;
@@ -1122,12 +1132,18 @@ body {
 .sc-service .group-review .review-list .review-item:nth-child(2) .profile-circle {
   background-color: #ff009d;
 }
+.sc-service .group-review .review-list .review-item:nth-child(3) {
+  z-index: 2;
+}
 .sc-service .group-review .review-list .review-item:nth-child(3) .bg {
   height: 100%;
   background: url(../../assets/images/card/image-sec-2-2.png) no-repeat top/cover;
 }
 .sc-service .group-review .review-list .review-item:nth-child(3) .profile-circle {
   background-color: #0049ff;
+}
+.sc-service .group-review .review-list .review-item:nth-child(4) {
+  z-index: 1;
 }
 .sc-service .group-review .review-list .review-item:nth-child(4) .bg {
   height: 100%;
@@ -1201,12 +1217,15 @@ body {
   background: url(../../assets/images/card/contract-icon.png) no-repeat 50%/cover;
 }
 .sc-service .group-review .review-title {
+  position: absolute;
+  left: 710px;
   padding-left: 200px;
   font-size: 72px;
   font-weight: 600;
   line-height: 1.28;
   font-weight: 700;
   color: #fff;
+  opacity: 0;
 }
 
 .sc-future {

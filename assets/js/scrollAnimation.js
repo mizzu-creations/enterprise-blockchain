@@ -118,42 +118,6 @@ const scWorthAnimation = () => {
     scrub: true,
   });
 };
-// section global 스크롤 애니메이션
-const scGlobalAnimation = () => {
-  const tlGlobal = gsap.timeline();
-  tlGlobal
-    .to(
-      ".global-title span",
-      {
-        xPercent: (i) => {
-          if (i === 0) return -115;
-          if (i === 2) return 125;
-          return 0;
-        },
-        duration: 0.2,
-      },
-      "-=0.2"
-    )
-    .to(
-      ".sc-global div",
-      {
-        xPercent: (i) => {
-          if (i === 0) return -100;
-          if (i === 1) return 100;
-        },
-        duration: 0.2,
-      },
-      "<"
-    );
-
-  ScrollTrigger.create({
-    trigger: ".sc-global",
-    start: "top 80%",
-    end: "bottom 90%",
-    animation: tlGlobal,
-    scrub: true,
-  });
-};
 // section talent 스크롤 애니메이션
 const scTalentAnimation = () => {
   const tlTalent = gsap.timeline();
@@ -185,7 +149,6 @@ const scPossibleAnimation = () => {
     animation: tlPossible,
     pin: true,
     pinSpacing: false,
-    markers: true,
     scrub: true,
   });
 };
@@ -283,6 +246,26 @@ const scSafetyAnimation = () => {
         duration: 1,
       },
       "-=1"
+    )
+    .to(".sc-safety .card-list", {
+      opacity: 0,
+      duration: 1,
+    })
+    .to(
+      ".sc-service .card-lock",
+      {
+        opacity: 1,
+        duration: 0.5,
+      },
+      "<"
+    )
+    .to(
+      ".sc-service .gradient-text",
+      {
+        opacity: 1,
+        duration: 0.2,
+      },
+      "-=0.2"
     );
 
   ScrollTrigger.create({
@@ -292,8 +275,106 @@ const scSafetyAnimation = () => {
     animation: tlSafety,
     pin: true,
     pinSpacing: true,
+    scrub: true,
+  });
+};
+// section service 가로 스크롤 애니메이션
+const scServiceAnimation = () => {
+  const tlService = gsap.timeline();
+  tlService
+    .to(".sc-service .card-lock", { opacity: 0, duration: 1 })
+    .to(".group-review .gradient-card-frame", { opacity: 1, duration: 0.5 })
+    .to(".sc-service .group-review", {
+      x: -120,
+      duration: 1,
+    })
+    .to(".group-review .review-item:nth-child(1)", {
+      x: 120,
+      duration: 1,
+    })
+    .to(
+      ".group-review .review-item:nth-child(2)",
+      {
+        x: -320,
+        duration: 1,
+      },
+      "<"
+    )
+    .to(
+      ".group-review .review-item:nth-child(3)",
+      {
+        x: -760,
+        duration: 1,
+      },
+      "<"
+    )
+    .to(
+      ".group-review .review-item:nth-child(4)",
+      {
+        x: -1200,
+        duration: 1,
+      },
+      "<"
+    )
+    .to(".group-review .review-item:nth-child(1) .glow", {
+      opacity: 1,
+      duration: 1,
+    })
+    .to(
+      ".group-review .review-title",
+      {
+        opacity: 1,
+        duration: 1,
+      },
+      "<"
+    );
+
+  ScrollTrigger.create({
+    trigger: ".sc-service .group-review",
+    start: "top top",
+    end: "+=6000",
+    animation: tlService,
+    pin: true,
+    pinSpacing: true,
+    scrub: true,
+  });
+};
+// section global 스크롤 애니메이션
+const scGlobalAnimation = () => {
+  const tlGlobal = gsap.timeline();
+  tlGlobal
+    .to(
+      ".global-title span",
+      {
+        xPercent: (i) => {
+          if (i === 0) return -115;
+          if (i === 2) return 125;
+          return 0;
+        },
+        duration: 0.2,
+      },
+      "-=0.2"
+    )
+    .to(
+      ".sc-global div",
+      {
+        xPercent: (i) => {
+          if (i === 0) return -100;
+          if (i === 1) return 100;
+        },
+        duration: 0.2,
+      },
+      "<"
+    );
+
+  ScrollTrigger.create({
+    trigger: ".sc-global",
+    start: "top 80%",
+    end: "bottom 90%",
+    animation: tlGlobal,
     markers: true,
     scrub: true,
+    id: "global",
   });
 };
 
@@ -301,9 +382,10 @@ export const sectionScrollAni = () => {
   scIntroAnimation();
   scShowcaseAnimation();
   scWorthAnimation();
-  scGlobalAnimation();
   scTalentAnimation();
   scPossibleAnimation();
   scGradationAnimation();
   scSafetyAnimation();
+  scServiceAnimation();
+  scGlobalAnimation();
 };
