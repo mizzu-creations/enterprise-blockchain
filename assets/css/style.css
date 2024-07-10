@@ -321,6 +321,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   min-height: 100vh;
+  margin-top: 2000px;
 }
 #contents .sc-certification [class*=-inner] {
   width: 100%;
@@ -602,7 +603,6 @@ body {
   gap: 160px;
   padding-left: 100px;
   color: #fff;
-  overflow-x: scroll;
 }
 .sc-possible .possible-inner .possible-title {
   -ms-flex-negative: 0;

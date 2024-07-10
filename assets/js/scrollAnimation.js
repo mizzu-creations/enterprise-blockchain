@@ -43,11 +43,11 @@ const scShowcaseAnimation = () => {
           if (i === targets.length - 1) return -100;
           return 0;
         },
-        duration: 0.2,
+        duration: 0.5,
       },
       "-=0.2"
     )
-    .to(".showcase-contents", { opacity: 0, duration: 0.5 }, "<")
+    .to(".showcase-contents", { opacity: 0, duration: 0.5 }, "-=0.2")
     .to(
       ".showcase-desc.desc01 span",
       {
@@ -58,10 +58,10 @@ const scShowcaseAnimation = () => {
     )
     .to(
       ".sc-showcase .bg img:nth-child(3)",
-      { yPercent: -100, duration: 1 },
-      "<"
+      { yPercent: -100, duration: 0.75 },
+      "-=0.2"
     )
-    .to(".sc-showcase .bg img:nth-child(2)", { yPercent: -100, duration: 1 })
+    .to(".sc-showcase .bg img:nth-child(2)", { yPercent: -100, duration: 0.75 })
     .to(".showcase-contents", { opacity: 1, duration: 0.5 })
     .to(
       ".showcase-desc.desc02",
@@ -169,6 +169,26 @@ const scTalentAnimation = () => {
     scrub: true,
   });
 };
+// section possible 가로 스크롤 애니메이션
+const scPossibleAnimation = () => {
+  const tlPossible = gsap.timeline();
+  tlPossible.to(".possible-inner", {
+    xPercent: -57.5,
+    duration: 10,
+    ease: "none",
+  });
+
+  ScrollTrigger.create({
+    trigger: ".sc-possible",
+    start: "top top",
+    end: "+=2000",
+    animation: tlPossible,
+    pin: true,
+    pinSpacing: false,
+    markers: true,
+    scrub: true,
+  });
+};
 
 export const sectionScrollAni = () => {
   scIntroAnimation();
@@ -176,4 +196,5 @@ export const sectionScrollAni = () => {
   scWorthAnimation();
   scGlobalAnimation();
   scTalentAnimation();
+  scPossibleAnimation();
 };
