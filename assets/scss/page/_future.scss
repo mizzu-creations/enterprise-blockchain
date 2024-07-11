@@ -5,7 +5,7 @@
   .future-inner {
     display: flex;
     align-items: center;
-    overflow-x: scroll;
+    height: 100vh;
     .future-title {
       padding: 0 160px 0 100px;
       @include font-size(72);
@@ -138,7 +138,7 @@
     }
   }
   .future-bottom {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -148,15 +148,13 @@
     bottom: 0;
     background-image: linear-gradient(180deg, hsla(0, 0%, 98%, 0), #fff);
     text-align: center;
+    opacity: 0;
     z-index: 40;
     .group-arrow {
       margin-top: 10px;
       .arrow {
         display: flex;
         padding-bottom: 14px;
-        // opacity: 0;
-        // visibility: hidden;
-        // transition: opacity 0.3s, visibility 0.3s;
         &-item {
           width: 27px;
           height: 27px;

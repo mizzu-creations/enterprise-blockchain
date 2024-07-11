@@ -1,5 +1,5 @@
-// section intro 스크롤 애니메이션
-const scIntroAnimation = () => {
+// section intro
+const scIntroAni = () => {
   const tlIntro = gsap.timeline();
 
   const fadeInOut = (selector, duration = 0.5) => {
@@ -29,8 +29,8 @@ const scIntroAnimation = () => {
     scrub: true,
   });
 };
-// section showcase 스크롤 애니메이션
-const scShowcaseAnimation = () => {
+// section showcase
+const scShowcaseAni = () => {
   const tlShowcase = gsap.timeline();
   tlShowcase
     .to(".showcase-contents", { opacity: 1, duration: 0.5 })
@@ -82,8 +82,8 @@ const scShowcaseAnimation = () => {
     scrub: true,
   });
 };
-// section worth 스크롤 애니메이션
-const scWorthAnimation = () => {
+// section worth
+const scWorthAni = () => {
   const tlWorth = gsap.timeline();
   tlWorth
     .to(
@@ -118,8 +118,8 @@ const scWorthAnimation = () => {
     scrub: true,
   });
 };
-// section talent 스크롤 애니메이션
-const scTalentAnimation = () => {
+// section talent
+const scTalentAni = () => {
   const tlTalent = gsap.timeline();
   tlTalent.to(".talent-contents", { yPercent: -100, duration: 10 });
 
@@ -133,8 +133,8 @@ const scTalentAnimation = () => {
     scrub: true,
   });
 };
-// section possible 가로 스크롤 애니메이션
-const scPossibleAnimation = () => {
+// section possible
+const scPossibleAni = () => {
   const tlPossible = gsap.timeline();
   tlPossible.to(".possible-inner", {
     xPercent: -57.5,
@@ -152,8 +152,8 @@ const scPossibleAnimation = () => {
     scrub: true,
   });
 };
-// section gradation 스크롤 애니메이션
-const scGradationAnimation = () => {
+// section gradation
+const scGradationAni = () => {
   const tlGradation = gsap.timeline();
   tlGradation
     .set(".sc-gradation .blue", {
@@ -195,9 +195,10 @@ const scGradationAnimation = () => {
     scrub: true,
   });
 };
-// section safety 가로 스크롤 애니메이션
-const scSafetyAnimation = () => {
+// section safety
+const scSafetyAni = () => {
   const tlSafety = gsap.timeline();
+
   tlSafety
     .to(".safety-inner", {
       x: -757,
@@ -249,24 +250,8 @@ const scSafetyAnimation = () => {
     )
     .to(".sc-safety .card-list", {
       opacity: 0,
-      duration: 1,
-    })
-    .to(
-      ".sc-service .card-lock",
-      {
-        opacity: 1,
-        duration: 0.5,
-      },
-      "<"
-    )
-    .to(
-      ".sc-service .gradient-text",
-      {
-        opacity: 1,
-        duration: 0.2,
-      },
-      "-=0.2"
-    );
+      duration: 0.5,
+    });
 
   ScrollTrigger.create({
     trigger: ".sc-safety",
@@ -278,16 +263,53 @@ const scSafetyAnimation = () => {
     scrub: true,
   });
 };
-// section service 가로 스크롤 애니메이션
-const scServiceAnimation = () => {
-  const tlService = gsap.timeline();
-  tlService
-    .to(".sc-service .card-lock", { opacity: 0, duration: 1 })
-    .to(".group-review .gradient-card-frame", { opacity: 1, duration: 0.5 })
+// section servic
+const scServiceAni = () => {
+  const tlServiceDataCard = gsap.timeline();
+
+  tlServiceDataCard
+    .to(".sc-service .flex .card-lock", {
+      opacity: 1,
+      duration: 0.5,
+    })
+    .to(
+      ".sc-service .flex .gradient-text",
+      {
+        opacity: 1,
+        duration: 0.2,
+      },
+      "-=0.2"
+    );
+
+  ScrollTrigger.create({
+    trigger: ".sc-service .flex",
+    start: "-=1800",
+    end: "5% bottom",
+    animation: tlServiceDataCard,
+    pin: false,
+    pinSpacing: true,
+    scrub: true,
+  });
+
+  const tlServiceScrollReview = gsap.timeline();
+  tlServiceScrollReview
     .to(".sc-service .group-review", {
       x: -120,
       duration: 1,
     })
+    .to(
+      ".group-review .review-item:nth-child(1)",
+      {
+        visibility: "visible",
+        duration: 0.5,
+      },
+      "<"
+    )
+    .to(
+      ".sc-service .flex .card-lock",
+      { visibility: "hidden", duration: 0.5 },
+      "<"
+    )
     .to(".group-review .review-item:nth-child(1)", {
       x: 120,
       duration: 1,
@@ -332,15 +354,15 @@ const scServiceAnimation = () => {
   ScrollTrigger.create({
     trigger: ".sc-service .group-review",
     start: "top top",
-    end: "+=6000",
-    animation: tlService,
+    end: "+=2000",
+    animation: tlServiceScrollReview,
     pin: true,
     pinSpacing: true,
     scrub: true,
   });
 };
-// section global 스크롤 애니메이션
-const scGlobalAnimation = () => {
+// section global
+const scGlobalAni = () => {
   const tlGlobal = gsap.timeline();
   tlGlobal
     .to(
@@ -372,20 +394,104 @@ const scGlobalAnimation = () => {
     start: "top 80%",
     end: "bottom 90%",
     animation: tlGlobal,
-    markers: true,
     scrub: true,
-    id: "global",
+  });
+};
+// section future
+const scFutureAni = () => {
+  const tlFuture = gsap.timeline();
+  tlFuture
+    .to(".future-inner", { xPercent: -30, duration: 1 })
+    .to(
+      ".future-bottom",
+      {
+        opacity: 1,
+        duration: 0.5,
+      },
+      "<"
+    )
+    .to(".future-bottom", { opacity: 0, duration: 1 });
+
+  ScrollTrigger.create({
+    trigger: ".sc-future .future-inner",
+    start: "top top",
+    end: "+=1500",
+    animation: tlFuture,
+    pin: true,
+    pinSpacing: true,
+    scrub: true,
+    onUpdate: (self) => {
+      if (self.progress > 0.5) {
+        $(".arrow-title").text("미래금융");
+      } else {
+        $(".arrow-title").text("전통금융");
+      }
+    },
+  });
+};
+// section creator
+const scCreatorAni = () => {
+  const tlCreatorIntro = gsap.timeline();
+  tlCreatorIntro
+    .to(".sc-creator .title-wrap", { opacity: 1, duration: 1 })
+    .to(".sc-creator .scroll-down", { opacity: 1, duration: 1 })
+    .to(".sc-creator .title-wrap", { opacity: 0, duration: 1 })
+    .to(".sc-creator .scroll-down", { opacity: 0, duration: 1 }, "<");
+
+  ScrollTrigger.create({
+    trigger: ".sc-creator .group-top",
+    start: "top top",
+    end: "+=2000",
+    animation: tlCreatorIntro,
+    pin: true,
+    pinSpacing: true,
+    scrub: true,
+  });
+
+  const tlCreatorCardScroll = gsap.timeline();
+  tlCreatorCardScroll.to(".sc-creator .bottom-inner", {
+    xPercent: -30,
+    duration: 1,
+  });
+
+  ScrollTrigger.create({
+    trigger: ".sc-creator .bottom-inner",
+    start: "top top",
+    end: "+=1000",
+    animation: tlCreatorCardScroll,
+    pin: true,
+    pinSpacing: true,
+    scrub: true,
+  });
+};
+// section participation > 클래스 전환으로 변경하기
+const scParticipationAni = () => {
+  const tlParti = gsap.timeline();
+  tlParti.to(".group-join", {
+    yPercent: -100,
+    duration: 1,
+  });
+
+  ScrollTrigger.create({
+    trigger: ".sc-participation .group-join",
+    start: "top 90%",
+    end: "bottom bottom",
+    animation: tlParti,
+    scrub: true,
   });
 };
 
 export const sectionScrollAni = () => {
-  scIntroAnimation();
-  scShowcaseAnimation();
-  scWorthAnimation();
-  scTalentAnimation();
-  scPossibleAnimation();
-  scGradationAnimation();
-  scSafetyAnimation();
-  scServiceAnimation();
-  scGlobalAnimation();
+  scIntroAni();
+  scShowcaseAni();
+  scWorthAni();
+  scTalentAni();
+  scPossibleAni();
+  scGradationAni();
+  scSafetyAni();
+  scServiceAni();
+  scGlobalAni();
+  scFutureAni();
+  scCreatorAni();
+  scParticipationAni();
 };

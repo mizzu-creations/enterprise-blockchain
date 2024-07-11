@@ -27,6 +27,8 @@
     position: relative;
     display: flex;
     flex-wrap: nowrap;
+    transform: translateY(100%);
+    z-index: -1;
     &::after {
       content: "";
       position: absolute;
