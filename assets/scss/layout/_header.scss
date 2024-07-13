@@ -45,7 +45,7 @@
 }
 #header.dark {
   .header-inner .logo img {
-    filter: none;
+    filter: brightness(0) invert(0);
   }
   #gnb .nav-list .nav-item a {
     color: #000;

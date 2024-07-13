@@ -1,12 +1,21 @@
 .sc-safety {
+  height: 600vh;
+  .sticky-wrapper {
+    height: 700vh;
+  }
+  .sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
   .safety-inner {
     display: flex;
     align-items: center;
-    gap: 160px;
     height: 100vh;
+    padding-left: 100px;
     color: #fff;
     .safety-title {
-      padding-left: 100px;
+      padding-right: 100px;
       @include font-size(72);
     }
     .group-data-cards {

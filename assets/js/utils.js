@@ -8,10 +8,3 @@ export const debounce = (func, wait) => {
 export const getCustomComputedStyle = (property) => {
   return getComputedStyle(document.body).getPropertyValue(property);
 };
-export const updateBodyBackgroundColor = (currentScroll) => {
-  if (currentScroll >= 0.4938 && currentScroll < 0.7785) {
-    $("body").css("background-color", "#000");
-  } else {
-    $("body").css("background-color", "#fff");
-  }
-};

@@ -1,40 +1,51 @@
 // section intro
 const scIntroAni = () => {
-  const tlIntro = gsap.timeline();
+  const tlIntro = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".sc-intro",
+      start: "0% 0%",
+      end: "100% 100%",
+      scrub: 0,
+      onLeave: () => {
+        $(".sc-intro .scroll-down").addClass("hide");
+      },
+      onEnterBack: () => {
+        $(".sc-intro .scroll-down").removeClass("hide");
+      },
+    },
+  });
 
-  const fadeInOut = (selector, duration = 0.5) => {
-    tlIntro
-      .to(selector, { opacity: 1, duration })
-      .to(selector, { opacity: 0, duration });
+  const fadeInOut = (selector) => {
+    tlIntro.to(selector, { opacity: 1 }).to(selector, { opacity: 0 });
   };
 
-  tlIntro
-    .to(".sc-intro .intro-contents", { opacity: 1, duration: 0.5 })
-    .to(".sc-intro .desc01", { opacity: 1, duration: 0.5 }, "<");
+  tlIntro.to(".sc-intro .intro-contents", { opacity: 1 }).to(
+    ".sc-intro .desc01",
+    {
+      opacity: 1,
+      onUpdate: function () {
+        if (this.progress() >= 0.5) {
+          gsap.to("#header", { yPercent: 100 });
+        } else {
+          gsap.to("#header", { yPercent: -100 });
+        }
+      },
+    },
+    "<"
+  );
 
   fadeInOut(".sc-intro .desc01");
   fadeInOut(".sc-intro .desc02");
   fadeInOut(".sc-intro .desc03");
 
-  tlIntro
-    .to(".sc-intro .desc04", { opacity: 1, duration: 0.5 })
-    .to(".sc-intro .intro-contents", { position: "sticky", duration: 1 })
-    .to(".sc-intro .scroll-down", { opacity: 0, duration: 0.2 }, "-=0.8");
-
-  ScrollTrigger.create({
-    trigger: ".sc-intro",
-    start: "7% center",
-    end: "bottom center",
-    animation: tlIntro,
-    scrub: true,
-  });
+  tlIntro.to(".sc-intro .desc04", { opacity: 1 });
 };
 // section showcase
 const scShowcaseAni = () => {
   const tlShowcase = gsap.timeline();
   tlShowcase
-    .to(".showcase-contents", { opacity: 1, duration: 0.5 })
-    .to(".showcase-desc.desc01 span", { opacity: 1, duration: 0.5 }, "<")
+    .to(".showcase-contents", { opacity: 1 }, "a")
+    .to(".showcase-desc.desc01 span", { opacity: 1 }, "a")
     .to(
       ".showcase-desc.desc01 span",
       {
@@ -43,33 +54,23 @@ const scShowcaseAni = () => {
           if (i === targets.length - 1) return -100;
           return 0;
         },
-        duration: 0.5,
       },
-      "-=0.2"
+      "b"
     )
-    .to(".showcase-contents", { opacity: 0, duration: 0.5 }, "-=0.2")
-    .to(
-      ".showcase-desc.desc01 span",
-      {
-        opacity: 0,
-        duration: 0.5,
-      },
-      "-=0.2"
-    )
-    .to(
-      ".sc-showcase .bg img:nth-child(3)",
-      { yPercent: -100, duration: 0.75 },
-      "-=0.2"
-    )
-    .to(".sc-showcase .bg img:nth-child(2)", { yPercent: -100, duration: 0.75 })
-    .to(".showcase-contents", { opacity: 1, duration: 0.5 })
+    .to(".showcase-contents", { "background-color": "rgba(0, 0, 0, 0)" }, "b")
+    .to(".showcase-desc.desc01 span", {
+      opacity: 0,
+    })
+    .to(".sc-showcase .bg .thumb:nth-child(3)", { height: 0 })
+    .to(".sc-showcase .bg .thumb:nth-child(2)", { height: 0 })
+    .to(".showcase-contents", { "background-color": "rgba(0, 0, 0, 0.6)" }, "c")
     .to(
       ".showcase-desc.desc02",
       {
         opacity: 1,
         duration: 0.5,
       },
-      "<"
+      "c"
     );
 
   ScrollTrigger.create({
@@ -77,85 +78,70 @@ const scShowcaseAni = () => {
     start: "top top",
     end: "bottom bottom",
     animation: tlShowcase,
-    pin: true,
-    pinSpacing: false,
     scrub: true,
   });
 };
-// section worth
-const scWorthAni = () => {
+// section proof
+const scProofAni = () => {
   const tlWorth = gsap.timeline();
   tlWorth
-    .to(
-      ".worth-title span",
-      {
-        xPercent: (i) => {
-          if (i === 0) return -170;
-          if (i === 2) return 134;
-          return 0;
-        },
-        duration: 0.2,
+    .set(".group-worth div", {
+      x: (index) => {
+        const divWidth = $(".group-worth div").outerWidth();
+        return index === 0 ? divWidth : -divWidth;
       },
-      "-=0.2"
-    )
+    })
+    .to(".worth-title span", {
+      x: (index, elem) => {
+        const centerValue =
+          $(".worth-title span:nth-child(2)").outerWidth() / 2;
+        const currentValue = $(elem).outerWidth() / 2;
+        const xValue = centerValue + currentValue;
+        if (index === 0) return -xValue;
+        if (index === 2) return xValue;
+        return 0;
+      },
+    })
     .to(
-      ".sc-worth div",
+      ".group-worth div",
       {
-        xPercent: (i) => {
-          if (i === 0) return -100;
-          if (i === 1) return 100;
-        },
-        duration: 0.2,
+        x: 0,
       },
       "<"
     );
 
   ScrollTrigger.create({
-    trigger: ".sc-worth",
+    trigger: ".group-worth",
     start: "top 80%",
     end: "bottom 90%",
     animation: tlWorth,
-    scrub: true,
-  });
-};
-// section talent
-const scTalentAni = () => {
-  const tlTalent = gsap.timeline();
-  tlTalent.to(".talent-contents", { yPercent: -100, duration: 10 });
-
-  ScrollTrigger.create({
-    trigger: ".sc-talent",
-    start: "top top",
-    end: "bottom+=200 bottom",
-    animation: tlTalent,
-    pin: true,
-    pinSpacing: false,
-    scrub: true,
+    invalidateOnRefresh: true,
+    scrub: 0,
   });
 };
 // section possible
 const scPossibleAni = () => {
   const tlPossible = gsap.timeline();
-  tlPossible.to(".possible-inner", {
-    xPercent: -57.5,
-    duration: 10,
-    ease: "none",
+  tlPossible.to(".sc-possible .possible-inner", {
+    xPercent: -100,
+    x: () => {
+      return window.innerWidth;
+    },
   });
 
   ScrollTrigger.create({
     trigger: ".sc-possible",
     start: "top top",
-    end: "+=2000",
+    end: "100% 100%",
     animation: tlPossible,
-    pin: true,
-    pinSpacing: false,
-    scrub: true,
+    invalidateOnRefresh: true,
+    scrub: 0,
   });
 };
 // section gradation
 const scGradationAni = () => {
-  const tlGradation = gsap.timeline();
-  tlGradation
+  const tlMoveColorBar = gsap.timeline();
+  tlMoveColorBar
     .set(".sc-gradation .blue", {
       xPercent: -50,
     })
@@ -164,25 +150,11 @@ const scGradationAni = () => {
     })
     .to(".sc-gradation .blue", {
       xPercent: 0,
-      duration: 0.5,
     })
     .to(
       ".sc-gradation .green",
       {
         xPercent: 0,
-        duration: 0.5,
-      },
-      "<"
-    )
-    .to(".sc-gradation .desc-area", {
-      opacity: 1,
-      duration: 1,
-    })
-    .to(
-      ".sc-gradation .blur",
-      {
-        opacity: 1,
-        duration: 1,
       },
       "<"
     );
@@ -190,9 +162,26 @@ const scGradationAni = () => {
   ScrollTrigger.create({
     trigger: ".sc-gradation",
     start: "top bottom",
-    end: "+=1400",
-    animation: tlGradation,
+    end: "bottom 80%",
+    animation: tlMoveColorBar,
     scrub: true,
+  });
+
+  const tlBlurColorBar = gsap.timeline();
+  tlBlurColorBar.to(".sc-gradation .desc-area", { opacity: 1 });
+
+  ScrollTrigger.create({
+    trigger: ".sc-gradation",
+    start: "top 40%",
+    end: "bottom 40%",
+    animation: tlBlurColorBar,
+    scrub: true,
+    onEnter: function () {
+      gsap.to(".sc-gradation .blur", { opacity: 1, duration: 0.3 });
+    },
+    onLeaveBack: function () {
+      gsap.to(".sc-gradation .blur", { opacity: 0, duration: 0.3 });
+    },
   });
 };
 // section safety
@@ -200,197 +189,179 @@ const scSafetyAni = () => {
   const tlSafety = gsap.timeline();
 
   tlSafety
-    .to(".safety-inner", {
-      x: -757,
-      duration: 1,
-    })
-    .to(".sc-safety .card-item:nth-child(1)", {
-      x: 200,
-      duration: 1,
-    })
+    .to(
+      ".safety-inner",
+      {
+        x: () => {
+          return $(".sc-safety .safety-title").outerWidth() * -1;
+        },
+      },
+      "a"
+    )
     .to(
       ".sc-safety .card-item:nth-child(2)",
-      {
-        x: -240,
-        duration: 1,
-      },
-      "<"
+      { xPercent: -100, x: -40 },
+      "a+=0.7"
     )
     .to(
       ".sc-safety .card-item:nth-child(3)",
-      {
-        x: -680,
-        duration: 1,
-      },
-      "<"
+      { xPercent: -200, x: -40 * 2 },
+      "a+=0.7"
     )
     .to(
       ".sc-safety .card-item:nth-child(4)",
-      {
-        x: -1120,
-        duration: 1,
-      },
-      "<"
+      { xPercent: -300, x: -40 * 3 },
+      "a+=0.7"
     )
-    .to(
-      ".sc-safety .unlock",
-      {
-        opacity: 0,
-        duration: 1,
-      },
-      "-=2"
-    )
-    .to(
-      ".sc-safety .lock",
-      {
-        opacity: 1,
-        duration: 1,
-      },
-      "-=1"
-    )
-    .to(".sc-safety .card-list", {
-      opacity: 0,
-      duration: 0.5,
-    });
+    .to(".sc-safety .unlock", { opacity: 0, duration: 0.5 }, "b-=0.6")
+    .to(".sc-safety .lock", { opacity: 1, duration: 0.5 }, "b-=0.2")
+    .to(".sc-safety .lock", { opacity: 0, duration: 0.5 }, "c")
+    .to(".sc-safety .card-item:not(:last-child)", { autoAlpha: 0 }, "c");
 
   ScrollTrigger.create({
     trigger: ".sc-safety",
-    start: "top top",
-    end: "+=2000",
+    start: "0% 0%",
+    end: "100% 100%",
     animation: tlSafety,
-    pin: true,
-    pinSpacing: true,
-    scrub: true,
+    invalidateOnRefresh: true,
+    scrub: 0,
   });
 };
 // section servic
 const scServiceAni = () => {
-  const tlServiceDataCard = gsap.timeline();
-
-  tlServiceDataCard
-    .to(".sc-service .flex .card-lock", {
-      opacity: 1,
-      duration: 0.5,
-    })
-    .to(
-      ".sc-service .flex .gradient-text",
-      {
-        opacity: 1,
-        duration: 0.2,
-      },
-      "-=0.2"
-    );
-
-  ScrollTrigger.create({
-    trigger: ".sc-service .flex",
-    start: "-=1800",
-    end: "5% bottom",
-    animation: tlServiceDataCard,
-    pin: false,
-    pinSpacing: true,
-    scrub: true,
+  gsap.set(".sc-service .service-inner .sticky", {
+    autoAlpha: 0,
   });
 
-  const tlServiceScrollReview = gsap.timeline();
-  tlServiceScrollReview
-    .to(".sc-service .group-review", {
-      x: -120,
-      duration: 1,
+  gsap.to(".sc-service .flex .gradient-text", {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".sc-service .service-inner",
+      start: "top top",
+      end: "35% bottom",
+      scrub: 0,
+    },
+  });
+
+  ScrollTrigger.create({
+    trigger: ".sc-service .service-inner",
+    start: "0% 0%",
+    end: "100% 100%",
+    scrub: 0,
+    onEnter: () => {
+      gsap.set(".sc-service .service-inner .sticky", {
+        autoAlpha: 1,
+      });
+      gsap.set(".sc-safety", {
+        autoAlpha: 0,
+      });
+    },
+    onLeaveBack: () => {
+      gsap.set(".sc-service .service-inner .sticky", {
+        autoAlpha: 0,
+      });
+      gsap.set(".sc-safety", {
+        autoAlpha: 1,
+      });
+    },
+  });
+
+  const tlServiceDataCard = gsap.timeline();
+  tlServiceDataCard
+    .to(".sc-service .review-list", {
+      x: -20,
+      duration: 0.4,
     })
     .to(
-      ".group-review .review-item:nth-child(1)",
+      ".sc-service .review-list",
       {
-        visibility: "visible",
-        duration: 0.5,
+        x: 0,
+        duration: 0.4,
       },
+      "-=0.2"
+    )
+    .to(
+      ".sc-service .review-item:nth-child(2)",
+      { xPercent: -100, x: -40 },
       "<"
     )
     .to(
-      ".sc-service .flex .card-lock",
-      { visibility: "hidden", duration: 0.5 },
-      "<"
-    )
-    .to(".group-review .review-item:nth-child(1)", {
-      x: 120,
-      duration: 1,
-    })
-    .to(
-      ".group-review .review-item:nth-child(2)",
-      {
-        x: -320,
-        duration: 1,
-      },
+      ".sc-service .review-item:nth-child(3)",
+      { xPercent: -200, x: -40 * 2 },
       "<"
     )
     .to(
-      ".group-review .review-item:nth-child(3)",
-      {
-        x: -760,
-        duration: 1,
-      },
+      ".sc-service .review-item:nth-child(4)",
+      { xPercent: -300, x: -40 * 3 },
       "<"
     )
+    .to(".sc-service .review-item:not(:first-child)", { autoAlpha: 0 })
+    .to(".sc-service .review-title", { opacity: 1, duration: 0.3 }, "-=0.5")
     .to(
-      ".group-review .review-item:nth-child(4)",
-      {
-        x: -1200,
-        duration: 1,
-      },
-      "<"
-    )
-    .to(".group-review .review-item:nth-child(1) .glow", {
-      opacity: 1,
-      duration: 1,
-    })
-    .to(
-      ".group-review .review-title",
+      ".sc-service .review-item:first-child .glow",
       {
         opacity: 1,
-        duration: 1,
+        duration: 0.1,
       },
-      "<"
+      "-=0.4"
     );
 
   ScrollTrigger.create({
     trigger: ".sc-service .group-review",
-    start: "top top",
-    end: "+=2000",
-    animation: tlServiceScrollReview,
-    pin: true,
-    pinSpacing: true,
-    scrub: true,
+    start: "0% 0%",
+    end: "100% 100%",
+    animation: tlServiceDataCard,
+    invalidateOnRefresh: true,
+    scrub: 0,
+    onEnter: () => {
+      gsap.set(".sc-service .service-inner .sticky", {
+        autoAlpha: 0,
+      });
+      gsap.set(".sc-service .review-item:nth-child(1)", {
+        autoAlpha: 1,
+      });
+    },
+    onLeaveBack: () => {
+      gsap.set(".sc-service .service-inner .sticky", {
+        autoAlpha: 1,
+      });
+      gsap.set(".sc-service .review-item:nth-child(1)", {
+        autoAlpha: 0,
+      });
+    },
   });
 };
-// section global
-const scGlobalAni = () => {
+// section trend
+const scTrendAni = () => {
   const tlGlobal = gsap.timeline();
   tlGlobal
-    .to(
-      ".global-title span",
-      {
-        xPercent: (i) => {
-          if (i === 0) return -115;
-          if (i === 2) return 125;
-          return 0;
-        },
-        duration: 0.2,
+    .set(".group-global div", {
+      x: (index) => {
+        const divWidth = $(".group-global div").outerWidth();
+        return index === 0 ? divWidth : -divWidth;
       },
-      "-=0.2"
-    )
+    })
+    .to(".global-title span", {
+      x: (index, elem) => {
+        const centerValue =
+          $(".global-title span:nth-child(2)").outerWidth() / 2;
+        const currentValue = $(elem).outerWidth() / 2;
+        const xValue = centerValue + currentValue;
+        if (index === 0) return -xValue;
+        if (index === 2) return xValue;
+        return 0;
+      },
+    })
     .to(
-      ".sc-global div",
+      ".group-global div",
       {
-        xPercent: (i) => {
-          if (i === 0) return -100;
-          if (i === 1) return 100;
-        },
-        duration: 0.2,
+        x: 0,
       },
       "<"
     );
 
   ScrollTrigger.create({
-    trigger: ".sc-global",
+    trigger: ".group-global",
     start: "top 80%",
     end: "bottom 90%",
     animation: tlGlobal,
@@ -401,24 +372,27 @@ const scGlobalAni = () => {
 const scFutureAni = () => {
   const tlFuture = gsap.timeline();
   tlFuture
-    .to(".future-inner", { xPercent: -30, duration: 1 })
+    .to(".future-inner", {
+      x: () => {
+        return -window.innerWidth / 2;
+      },
+    })
     .to(
       ".future-bottom",
       {
         opacity: 1,
-        duration: 0.5,
+        duration: 0.1,
       },
       "<"
     )
-    .to(".future-bottom", { opacity: 0, duration: 1 });
+    .to(".future-bottom", { opacity: 0, duration: 0.1 });
 
   ScrollTrigger.create({
-    trigger: ".sc-future .future-inner",
+    trigger: ".sc-future",
     start: "top top",
-    end: "+=1500",
+    end: "bottom bottom",
     animation: tlFuture,
-    pin: true,
-    pinSpacing: true,
+    invalidateOnRefresh: true,
     scrub: true,
     onUpdate: (self) => {
       if (self.progress > 0.5) {
@@ -433,64 +407,79 @@ const scFutureAni = () => {
 const scCreatorAni = () => {
   const tlCreatorIntro = gsap.timeline();
   tlCreatorIntro
-    .to(".sc-creator .title-wrap", { opacity: 1, duration: 1 })
-    .to(".sc-creator .scroll-down", { opacity: 1, duration: 1 })
-    .to(".sc-creator .title-wrap", { opacity: 0, duration: 1 })
-    .to(".sc-creator .scroll-down", { opacity: 0, duration: 1 }, "<");
+    .to(".sc-creator .title-wrap", { opacity: 1 })
+    .to(".sc-creator .scroll-down", { opacity: 1 })
+    .to(".sc-creator .title-wrap", { opacity: 0 })
+    .to(".sc-creator .scroll-down", { opacity: 0 }, "<");
 
   ScrollTrigger.create({
     trigger: ".sc-creator .group-top",
     start: "top top",
-    end: "+=2000",
+    end: "bottom bottom",
     animation: tlCreatorIntro,
-    pin: true,
-    pinSpacing: true,
     scrub: true,
   });
 
-  const tlCreatorCardScroll = gsap.timeline();
-  tlCreatorCardScroll.to(".sc-creator .bottom-inner", {
-    xPercent: -30,
-    duration: 1,
-  });
-
   ScrollTrigger.create({
-    trigger: ".sc-creator .bottom-inner",
+    trigger: ".sc-creator .group-bottom",
     start: "top top",
-    end: "+=1000",
-    animation: tlCreatorCardScroll,
-    pin: true,
-    pinSpacing: true,
+    end: "bottom bottom",
+    animation: gsap.to(".sc-creator .bottom-inner", {
+      x: () => {
+        return -window.innerWidth + window.innerWidth / 3.3;
+      },
+    }),
+    invalidateOnRefresh: true,
     scrub: true,
   });
 };
-// section participation > 클래스 전환으로 변경하기
+// section participation
 const scParticipationAni = () => {
+  const joinMarquee = gsap.to(".join-wrapper", 7, {
+    xPercent: -20,
+    repeat: -1,
+    ease: "none",
+    paused: true,
+  });
+
   const tlParti = gsap.timeline();
-  tlParti.to(".group-join", {
-    yPercent: -100,
-    duration: 1,
+  tlParti.from(".group-join", {
+    yPercent: 100,
   });
 
   ScrollTrigger.create({
-    trigger: ".sc-participation .group-join",
-    start: "top 90%",
+    trigger: "#footer",
+    start: "top 100%",
     end: "bottom bottom",
-    animation: tlParti,
-    scrub: true,
+    // animation: tlParti,
+    onEnter: () => {
+      gsap.to(".group-join", {
+        yPercent: 0,
+        onComplete: () => {
+          joinMarquee.play();
+        },
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to(".group-join", {
+        yPercent: 100,
+        onComplete: () => {
+          joinMarquee.pause();
+        },
+      });
+    },
   });
 };
 
 export const sectionScrollAni = () => {
   scIntroAni();
   scShowcaseAni();
-  scWorthAni();
-  scTalentAni();
+  scProofAni();
   scPossibleAni();
   scGradationAni();
   scSafetyAni();
   scServiceAni();
-  scGlobalAni();
+  scTrendAni();
   scFutureAni();
   scCreatorAni();
   scParticipationAni();

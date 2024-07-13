@@ -1,11 +1,14 @@
 .sc-future {
-  display: flex;
-  align-items: center;
-  position: relative;
+  height: 400vh;
+  .sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
   .future-inner {
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     .future-title {
       padding: 0 160px 0 100px;
       @include font-size(72);
@@ -111,7 +114,6 @@
                   no-repeat 50% / cover;
               }
             }
-
             // .card-info {
             //   display: flex;
             //   justify-content: space-between;

@@ -1,12 +1,16 @@
 .sc-possible {
-  display: flex;
-  align-items: center;
-  position: relative;
-  height: 100vh;
+  height: 600vh;
+  .sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
   .possible-inner {
     display: flex;
     align-items: center;
     gap: 160px;
+    width: max-content;
+    height: 100%;
     padding-left: 100px;
     color: #fff;
     .possible-title {

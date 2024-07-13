@@ -1,14 +1,19 @@
 .sc-service {
   .flex {
+    display: flex;
     padding: 0 100px;
+    .sticky {
+      display: flex;
+      align-items: center;
+      width: 400px;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
     .card-lock {
       display: flex;
       justify-content: center;
       align-items: center;
-      position: fixed;
-      top: 50%;
-      opacity: 0;
-      transform: translateY(-50%);
       .gradient-text {
         @include gradient-text(40);
         opacity: 0;
@@ -16,8 +21,8 @@
     }
     .group-service {
       flex: 1;
-      margin-left: 800px;
-      padding-top: 13.5417vw;
+      padding: 100vh 0;
+      padding-left: 13.5417vw;
       .service-content {
         color: #fff;
         &:first-child {
@@ -82,10 +87,15 @@
     }
   }
   .group-review {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 100vh;
+    height: 600vh;
+    .sticky {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      margin-top: -100vh;
+      position: sticky;
+      top: 0;
+    }
     .review-list {
       display: flex;
       gap: 40px;
@@ -230,7 +240,6 @@
     .review-title {
       position: absolute;
       left: 710px;
-      padding-left: 200px;
       @include font-size(72);
       font-weight: 700;
       color: #fff;

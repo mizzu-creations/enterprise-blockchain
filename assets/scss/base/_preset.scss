@@ -10,10 +10,17 @@
 body {
   word-break: keep-all;
   overflow-x: hidden;
-  transition: background-color 0.5s;
   font-family: "Archivo", "Noto Sans KR", sans-serif;
+  transition: background-color 0.5s;
+  &.dark {
+    background-color: #000;
+  }
 }
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
 }

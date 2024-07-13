@@ -1,21 +1,24 @@
 #contents {
-  .sc-career {
-    @include desc-only-page(#000);
-  }
-  .sc-worth {
-    @include text-divide-page("worth_aqua.jpg");
+  .sc-proof {
+    .group-career {
+      @include desc-only-page(#000);
+    }
+    .group-worth {
+      @include text-divide-page("worth_aqua.jpg");
+    }
   }
   .sc-certification {
     @include desc-only-page(#fff);
-    margin-top: 2000px;
     .certification-desc {
       color: #fff;
     }
   }
   .sc-trend {
-    @include desc-only-page(#000);
-  }
-  .sc-global {
-    @include text-divide-page("prove.jpg");
+    .group-trend {
+      @include desc-only-page(#000);
+    }
+    .group-global {
+      @include text-divide-page("prove.jpg");
+    }
   }
 }
