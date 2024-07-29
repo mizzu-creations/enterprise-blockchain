@@ -1,11 +1,11 @@
-import { debounce, getCustomComputedStyle } from "./utils.js";
+import { throttle, getCustomComputedStyle } from "./utils.js";
 
 export function handleScrollBtnTop() {
   let lastScrollTop = 0;
 
   $(window).on(
     "scroll",
-    debounce(() => {
+    throttle(() => {
       let currentScroll = getCustomComputedStyle("--scroll-percentage");
 
       let scrollTop = $(window).scrollTop();

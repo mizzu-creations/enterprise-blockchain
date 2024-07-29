@@ -1,4 +1,4 @@
-import { debounce } from "./utils.js";
+import { throttle } from "./utils.js";
 import { initializeGlobalValues } from "./setGlobalValues.js";
 import { handleScrollBtnTop } from "./btnTop.js";
 import { sectionScrollAni } from "./scrollAnimation.js";
@@ -15,7 +15,7 @@ $(function () {
   handleScrollBtnTop();
 
   // resize 이벤트 핸들러
-  $(window).on("resize", debounce(initializeGlobalValues, 100));
+  $(window).on("resize", throttle(initializeGlobalValues, 100));
   // scroll 이벤트 핸들러
-  $(window).on("scroll", debounce(initializeGlobalValues, 100));
+  $(window).on("scroll", throttle(initializeGlobalValues, 100));
 });
